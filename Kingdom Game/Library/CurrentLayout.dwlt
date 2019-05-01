@@ -47,7 +47,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 494}
   m_MaxSize: {x: 14004, y: 14044}
   vertical: 0
-  controlID: 31
+  controlID: 99
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -150,7 +150,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 544}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &7
 MonoBehaviour:
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 494}
   m_MaxSize: {x: 10002, y: 14044}
   vertical: 1
-  controlID: 32
+  controlID: 100
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -244,7 +244,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 222}
   m_MaxSize: {x: 8006, y: 4022}
   vertical: 0
-  controlID: 33
+  controlID: 101
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -370,20 +370,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Unity Projects\Experiments
+  m_LastProjectPath: C:\Unity Projects\Kingdom Game\Kingdom Game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 86370000
-    m_LastClickedID: 14214
-    m_ExpandedIDs: 000000004237000000ca9a3b
+    m_SelectedIDs: bc2b0000
+    m_LastClickedID: 11196
+    m_ExpandedIDs: 000000005a29000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -411,7 +411,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 
+    m_ExpandedIDs: 000000005a290000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -531,9 +531,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 966c0000
       m_LastClickedID: 0
-      m_ExpandedIDs: 06e1ffff4ae1ffffe6e2ffff78e6ffffbae6ffff94eaffff68ebffff883a0000
+      m_ExpandedIDs: dc84ffffde85ffff0686ffffd486ffff048dffff4a8dffffa88dffff968effffc08effff8e8fffff5892ffff3299ffff6899ffffc299ffff769cffffb69cfffffc9cffff86b2ffffc8b2fffff8b2ffff32b4ffff76b4ffff04b8ffff34bbffff3cbfffff6cbfffff42c1ffffb4c1ffffe2c1ffffe0d0ffff0ed1ffff4ad1ffff84d1ffffbcd1ffffd6dafffff6daffff40dbffff52dbffff84dbffff8eddffff54deffff76deffff9adeffffbcdeffffdedeffff00dfffff22dfffff44dfffff66dfffff88dfffffaadfffffccdfffff7ae0ffff22e1ffff48e1ffff6ee1ffffdae4ffff50e5ffff86e5fffff4e6ffffb6e7ffff88e8ffffd8e8ffff20e9ffffd2ebffffd8ecffff3eedffff30eefffff6eeffffc6f5ffff48f9ffff88faffff8efbffff522c00005c2c0000c02c0000da2c0000142d0000a82e0000b22e0000f22f000036300000183100000c340000e8340000ee350000ba3600003c370000743700007e370000f2410000fc410000dc4400001c460000244600003a46000056460000144a0000a04a0000a84a0000b44c0000be4c00006c4d0000744d00008a4d0000c2500000cc500000605e0000685e0000ca600000d660000086610000ec6f0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -549,7 +549,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 0}
+        m_ClientGUIView: {fileID: 4}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -593,9 +593,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 719.48444, y: 358.9829, z: -131.39723}
+    m_Target: {x: 598.00024, y: 258.6703, z: -80.65427}
     speed: 2
-    m_Value: {x: 719.48444, y: 358.9829, z: -131.39723}
+    m_Value: {x: 598.00024, y: 258.6703, z: -80.65427}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -628,9 +628,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 840.58716
+    m_Target: 638.66095
     speed: 2
-    m_Value: 840.58716
+    m_Value: 638.66095
   m_Ortho:
     m_Target: 1
     speed: 2
