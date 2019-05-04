@@ -4,6 +4,7 @@ ScriptsOnlyBuild:
     - CloseGame
     - Kingdom
     - LoadScene
+    - Save
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
@@ -34,27 +35,29 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9320}
+      Script: {instanceID: 9280}
     - Class: 114
       Script: {instanceID: 9322}
     - Class: 114
-      Script: {instanceID: 9328}
+      Script: {instanceID: 9324}
     - Class: 114
-      Script: {instanceID: 9334}
+      Script: {instanceID: 9330}
     - Class: 114
-      Script: {instanceID: 9342}
+      Script: {instanceID: 9336}
     - Class: 114
       Script: {instanceID: 9344}
     - Class: 114
-      Script: {instanceID: 9378}
+      Script: {instanceID: 9346}
     - Class: 114
       Script: {instanceID: 9380}
     - Class: 114
-      Script: {instanceID: 9670}
+      Script: {instanceID: 9382}
     - Class: 114
-      Script: {instanceID: 10558}
+      Script: {instanceID: 9534}
     - Class: 114
-      Script: {instanceID: 18080}
+      Script: {instanceID: 9676}
+    - Class: 114
+      Script: {instanceID: 10564}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -106,6 +109,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: ActivationTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 3e62759ea38bb6c42d973a53c615ddd0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Kingdom
   - hash:
       serializedVersion: 2
       Hash: cf9f5cf2c3145a37ac07f00e50e460f9
@@ -498,6 +507,12 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
+      Hash: 7854143c2e311ce52a6069d957503633
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Save
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -718,12 +733,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 3e62759ea38bb6c42d973a53c615ddd0
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Kingdom
   platform: 19
   scenePathNames:
   - Assets/Scenes/TitleScreen.unity

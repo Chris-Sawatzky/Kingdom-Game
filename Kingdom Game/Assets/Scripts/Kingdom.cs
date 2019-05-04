@@ -1,11 +1,22 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Kingdom : MonoBehaviour
 {
+    //variables to be used in calculations etc.
     public string name;
+    public int gold = 0;
+    public int wood = 0;
+    public int stone = 0;
+
+    //variables to be displayed on screen
+    public Text KingdomName;
+    public Text goldAsText;
 
 
     public GameObject inputField;
@@ -15,7 +26,7 @@ public class Kingdom : MonoBehaviour
         Debug.Log("Kingdom name is " + name);
     }
 
-    public Text KingdomName;
+    
     void Update()
     {
         if(KingdomName == null)
@@ -25,7 +36,51 @@ public class Kingdom : MonoBehaviour
         else
         {
             KingdomName.text = name;
+            goldAsText.text = "Gold: " + gold;
+        } 
+    }
+
+    public KingdomData CreateKingdomDataObject()
+    {
+        KingdomData data = new KingdomData();
+
+        data.name = name;
+        data.gold = gold;
+
+        return data;
+    }
+
+    //test method to make sure the gold is being saved and displayed properly
+    public void boostGold()
+    {
+        gold++;
+    }
+
+    public void SaveKingdom()
+    {
+        KingdomData data = CreateKingdomDataObject();
+
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(Application.persistentDataPath + "/kingdom.save");
+        bf.Serialize(file, data);
+        file.Close();
+    }
+
+    public void LoadKingdom()
+    {
+        if (File.Exists(Application.persistentDataPath + "/kingdom.save"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/kingdom.save", FileMode.Open);
+            KingdomData data = (KingdomData)bf.Deserialize(file);
+            file.Close();
+
+            name = data.name;
+            gold = data.gold;
         }
-        
+        else
+        {
+            Debug.Log("No save found");
+        }
     }
 }

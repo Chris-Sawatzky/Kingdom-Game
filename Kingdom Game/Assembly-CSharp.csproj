@@ -59,7 +59,6 @@
      <Compile Include="Assets\Scripts\Kingdom.cs" />
      <Compile Include="Assets\Scripts\KingdomData.cs" />
      <Compile Include="Assets\Scripts\LoadScene.cs" />
-     <Compile Include="Assets\Scripts\Save.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Unity Projects/Kingdom Game/Kingdom Game/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
