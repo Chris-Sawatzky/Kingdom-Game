@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class Kingdom : MonoBehaviour
 {
     //variables to be used in calculations etc.
-    public string name;
+    new public string name;
     public int gold = 0;
     public int wood = 0;
     public int stone = 0;
@@ -42,10 +42,16 @@ public class Kingdom : MonoBehaviour
 
     public KingdomData CreateKingdomDataObject()
     {
+        Blacksmith blacksmith = gameObject.GetComponent("Blacksmith") as Blacksmith;
+        
+
         KingdomData data = new KingdomData();
 
         data.name = name;
         data.gold = gold;
+        data.blacksmithLevel = blacksmith.level;
+        data.bsUpgradeCost = blacksmith.upgradeCost;
+
 
         return data;
     }
@@ -77,6 +83,11 @@ public class Kingdom : MonoBehaviour
 
             name = data.name;
             gold = data.gold;
+
+            //load the data for each of the buildings
+            Blacksmith blacksmith = gameObject.GetComponent("Blacksmith") as Blacksmith;
+            blacksmith.level = data.blacksmithLevel;
+            blacksmith.upgradeCost = data.bsUpgradeCost;
         }
         else
         {

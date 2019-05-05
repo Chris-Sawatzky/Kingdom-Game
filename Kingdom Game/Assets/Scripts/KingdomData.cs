@@ -8,4 +8,6 @@ public class KingdomData
     public int gold = 0;
     public int wood = 0;
     public int stone = 0;
+    public int blacksmithLevel = 0;
+    public int bsUpgradeCost = 0;
 }
