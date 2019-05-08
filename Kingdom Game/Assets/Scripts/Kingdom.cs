@@ -18,6 +18,9 @@ public class Kingdom : MonoBehaviour
     public Text KingdomName;
     public Text goldAsText;
 
+    public List<Item> weapons;
+    public List<Item> armor;
+
 
     public GameObject inputField;
     public void assignKingdomName()
@@ -29,15 +32,6 @@ public class Kingdom : MonoBehaviour
     
     void Update()
     {
-        if(KingdomName == null)
-        {
-            return;
-        }
-        else
-        {
-            KingdomName.text = name;
-            goldAsText.text = "Gold: " + gold;
-        } 
     }
 
     public KingdomData CreateKingdomDataObject()
@@ -51,6 +45,8 @@ public class Kingdom : MonoBehaviour
         data.gold = gold;
         data.blacksmithLevel = blacksmith.level;
         data.bsUpgradeCost = blacksmith.upgradeCost;
+
+        //TODO still need to be able to save the inventory lists
 
 
         return data;
@@ -84,10 +80,14 @@ public class Kingdom : MonoBehaviour
             name = data.name;
             gold = data.gold;
 
+            KingdomName.text = name;
+            goldAsText.text = "Gold: " + gold;
+
             //load the data for each of the buildings
             Blacksmith blacksmith = gameObject.GetComponent("Blacksmith") as Blacksmith;
             blacksmith.level = data.blacksmithLevel;
             blacksmith.upgradeCost = data.bsUpgradeCost;
+            blacksmith.levelAsText.text = "Level: " + blacksmith.level;
         }
         else
         {

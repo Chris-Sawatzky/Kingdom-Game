@@ -13,28 +13,22 @@ public class Blacksmith : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (levelAsText == null)
-        {
-            return;
-        }
-        else
-        {
-            levelAsText.text = "Level: " + level;
-        }
+
         
     }
+
 
     public void upgradeBuilding()
     {
         Kingdom kingdom = gameObject.GetComponent("Kingdom") as Kingdom;
         if(kingdom.gold >= upgradeCost)
         {
-            kingdom.gold = kingdom.gold - upgradeCost;
+            kingdom.gold -= upgradeCost;
+            kingdom.goldAsText.text = "Gold: " + kingdom.gold;
             level++;
             levelAsText.text = "Level: " + level;
-            upgradeCost = upgradeCost + 5; //TODO dertermine a formula for calculating the upgrade cost for buildings
-        }
 
-        
+            upgradeCost = upgradeCost + 5; //TODO determine a formula for calculating the upgrade cost for buildings
+        }
     }
 }
