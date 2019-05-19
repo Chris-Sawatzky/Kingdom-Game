@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 [System.Serializable]
 
@@ -10,4 +11,6 @@ public class KingdomData
     public int stone = 0;
     public int blacksmithLevel = 0;
     public int bsUpgradeCost = 0;
+
+    public List<Item> weapons = new List<Item>();
 }

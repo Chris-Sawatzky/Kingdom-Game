@@ -32,6 +32,8 @@ public class Kingdom : MonoBehaviour
     
     void Update()
     {
+        KingdomName.text = name;
+        goldAsText.text = "Gold: " + gold;
     }
 
     public KingdomData CreateKingdomDataObject()
@@ -47,6 +49,7 @@ public class Kingdom : MonoBehaviour
         data.bsUpgradeCost = blacksmith.upgradeCost;
 
         //TODO still need to be able to save the inventory lists
+        data.weapons = weapons;
 
 
         return data;
@@ -80,8 +83,9 @@ public class Kingdom : MonoBehaviour
             name = data.name;
             gold = data.gold;
 
-            KingdomName.text = name;
-            goldAsText.text = "Gold: " + gold;
+
+            //load the inventory lists
+            weapons = data.weapons;
 
             //load the data for each of the buildings
             Blacksmith blacksmith = gameObject.GetComponent("Blacksmith") as Blacksmith;

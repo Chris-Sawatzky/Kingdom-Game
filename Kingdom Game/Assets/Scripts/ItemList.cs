@@ -16,6 +16,9 @@ public class ItemList : MonoBehaviour
         AddButtons();
     }
 
+    /// <summary>
+    /// populate the list of items you can craft
+    /// </summary>
     private void AddButtons()
     {
         for (int i = 0; i < itemList.Count; i++)
