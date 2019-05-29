@@ -8,7 +8,7 @@ public class Inventory : MonoBehaviour
     public Button button;
     public Text itemName;
     public Text sellPrice;
-    //public Image itemImage;
+    public Image itemImage;
 
     private Item item;
     private InventoryManager inventoryManager;
@@ -26,7 +26,7 @@ public class Inventory : MonoBehaviour
         item = currentItem;
         itemName.text = item.itemName;
         sellPrice.text = item.goldCost.ToString(); //TODO make the sellPrice and gold cost different
-        //itemImage.sprite = item.itemImage;
+        itemImage.sprite = Resources.Load<Sprite>(item.spriteName);
 
 
         inventoryManager = currentInventory;

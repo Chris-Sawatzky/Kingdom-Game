@@ -3932,22 +3932,27 @@ MonoBehaviour:
   - itemName: Iron Sword
     goldCost: 5
     buildingLvl: 5
+    spriteName: 
     itemCategory: 1
   - itemName: Copper sword
     goldCost: 1
     buildingLvl: 4
+    spriteName: coatOfArms
     itemCategory: 1
   - itemName: steel sword
     goldCost: 10
     buildingLvl: 6
+    spriteName: 
     itemCategory: 1
   - itemName: silver sword
     goldCost: 10
     buildingLvl: 0
+    spriteName: 
     itemCategory: 1
   - itemName: iron armor
     goldCost: 10
     buildingLvl: 0
+    spriteName: 
     itemCategory: 2
 --- !u!1 &1214572058
 GameObject:
