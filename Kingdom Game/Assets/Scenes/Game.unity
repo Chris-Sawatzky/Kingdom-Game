@@ -2709,7 +2709,7 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 2101998589}
-        m_MethodName: AddButtons
+        m_MethodName: ShowInventory
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3928,32 +3928,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 6440858973268782610, guid: fc1b86b1fde3cdc48a7da42b351e2715, type: 3}
   contentPanel: {fileID: 1180329786}
-  itemList:
-  - itemName: Iron Sword
+  weaponList:
+  - itemName: iron sword
     goldCost: 5
-    buildingLvl: 5
-    spriteName: 
-    itemCategory: 1
-  - itemName: Copper sword
-    goldCost: 1
-    buildingLvl: 4
+    sellPrice: 2
+    buildingLvl: 1
     spriteName: coatOfArms
     itemCategory: 1
-  - itemName: steel sword
-    goldCost: 10
-    buildingLvl: 6
-    spriteName: 
-    itemCategory: 1
+    minAttack: 1
+    maxAttack: 2
   - itemName: silver sword
     goldCost: 10
-    buildingLvl: 0
+    sellPrice: 0
+    buildingLvl: 2
     spriteName: 
     itemCategory: 1
-  - itemName: iron armor
-    goldCost: 10
-    buildingLvl: 0
+    minAttack: 2
+    maxAttack: 3
+  armorList:
+  - itemName: Iron Cuirass
+    goldCost: 5
+    sellPrice: 0
+    buildingLvl: 1
     spriteName: 
     itemCategory: 2
+    defenseRating: 5
+    bodyLocation: pper Body
 --- !u!1 &1214572058
 GameObject:
   m_ObjectHideFlags: 0
@@ -6934,12 +6934,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2101998587}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fc788324c8bac34caa7a3d818b4d7c9, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e4d73f8ed6a9ee4cb1403c0c18b8085, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 6119583199247234664, guid: 505daff693b64b74992fa6d0dd8c3ee2, type: 3}
   contentPanel: {fileID: 2101998588}
-  inventory: []
+  weaponList: []
+  armorList: []
 --- !u!114 &2101998590
 MonoBehaviour:
   m_ObjectHideFlags: 0

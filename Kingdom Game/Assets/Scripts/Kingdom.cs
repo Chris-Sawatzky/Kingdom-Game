@@ -18,8 +18,8 @@ public class Kingdom : MonoBehaviour
     public Text KingdomName;
     public Text goldAsText;
 
-    public List<Item> weapons;
-    public List<Item> armor;
+    public List<Weapon> weapons;
+    public List<Armor> armor;
 
 
     public GameObject inputField;
@@ -48,8 +48,9 @@ public class Kingdom : MonoBehaviour
         data.blacksmithLevel = blacksmith.level;
         data.bsUpgradeCost = blacksmith.upgradeCost;
 
-        //TODO still need to be able to save the inventory lists
+
         data.weapons = weapons;
+        data.armor = armor;
 
 
         return data;

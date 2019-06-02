@@ -11,7 +11,7 @@ public class Inventory : MonoBehaviour
     public Image itemImage;
 
     private Item item;
-    private InventoryManager inventoryManager;
+    private ItemList inventoryManager;
 
 
     // Start is called before the first frame update
@@ -21,15 +21,15 @@ public class Inventory : MonoBehaviour
     }
 
     // setup the button to display in the crafting list
-    public void Setup(Item currentItem, InventoryManager currentInventory)
+    public void Setup(Item currentItem, ItemList inventory)
     {
         item = currentItem;
         itemName.text = item.itemName;
-        sellPrice.text = item.goldCost.ToString(); //TODO make the sellPrice and gold cost different
+        sellPrice.text = item.sellPrice.ToString();
         itemImage.sprite = Resources.Load<Sprite>(item.spriteName);
 
 
-        inventoryManager = currentInventory;
+        inventoryManager = inventory;
     }
 
     public void HandleClick()
