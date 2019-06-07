@@ -605,10 +605,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: f7d2b3ba-cae0-4557-983a-b97c63ec3306
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: Kingdom Game (2)
+  organizationId: vexx_lord
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

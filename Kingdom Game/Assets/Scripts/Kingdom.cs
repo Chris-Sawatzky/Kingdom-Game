@@ -11,8 +11,8 @@ public class Kingdom : MonoBehaviour
     //variables to be used in calculations etc.
     new public string name;
     public int gold = 0;
-    public int wood = 0;
-    public int stone = 0;
+    public int wood = 0;// not saved yet
+    public int stone = 0;// not saved yet
 
     //variables to be displayed on screen
     public Text KingdomName;
@@ -87,6 +87,7 @@ public class Kingdom : MonoBehaviour
 
             //load the inventory lists
             weapons = data.weapons;
+            armor = data.armor;
 
             //load the data for each of the buildings
             Blacksmith blacksmith = gameObject.GetComponent("Blacksmith") as Blacksmith;

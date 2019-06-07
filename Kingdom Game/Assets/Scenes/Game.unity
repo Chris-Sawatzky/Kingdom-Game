@@ -736,6 +736,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1180329789}
+        m_MethodName: AddButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &221082667
@@ -3939,7 +3950,7 @@ MonoBehaviour:
     maxAttack: 2
   - itemName: silver sword
     goldCost: 10
-    sellPrice: 0
+    sellPrice: 8
     buildingLvl: 2
     spriteName: 
     itemCategory: 1
@@ -3948,12 +3959,12 @@ MonoBehaviour:
   armorList:
   - itemName: Iron Cuirass
     goldCost: 5
-    sellPrice: 0
+    sellPrice: 2
     buildingLvl: 1
     spriteName: 
     itemCategory: 2
     defenseRating: 5
-    bodyLocation: pper Body
+    bodyLocation: Upper Body
 --- !u!1 &1214572058
 GameObject:
   m_ObjectHideFlags: 0
@@ -4050,6 +4061,17 @@ MonoBehaviour:
       - m_Target: {fileID: 547761542}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1180329789}
+        m_MethodName: RemoveButtons
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4575,6 +4597,28 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2067778147}
         m_MethodName: upgradeBuilding
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1180329789}
+        m_MethodName: RemoveButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1180329789}
+        m_MethodName: AddButtons
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6802,7 +6846,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2067778144}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fed79b12b47946346b9b7c8464c44bdb, type: 3}
+  m_Script: {fileID: 11500000, guid: 39b6cb08f9b3486459a5c3b44fdd9324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0

@@ -10,11 +10,10 @@ public class ItemList : MonoBehaviour
     public List<Weapon> weaponList;
     public List<Armor> armorList;
 
-
     // Start is called before the first frame update
     void Start()
     {
-        AddButtons();
+
     }
 
     /// <summary>
@@ -86,30 +85,38 @@ public class ItemList : MonoBehaviour
     /// populate the list of items you can craft will display the weapons first and then the armors
     /// (I feel like there is a better way to do this but I cant think of it)
     /// </summary>
-    private void AddButtons() //TODO find a way to only display items that can be crafted
+    public void AddButtons()
     {
+        Blacksmith blacksmith = GameObject.Find("Kingdom").GetComponent<Blacksmith>();
         for (int i = 0; i < weaponList.Count; i++)
         {
             
             Weapon weapon = weaponList[i];
-            GameObject newButton = (GameObject)GameObject.Instantiate(prefab);
-            newButton.transform.SetParent(contentPanel);
+            if (weapon.buildingLvl <= blacksmith.level)
+            {
+                GameObject newButton = (GameObject)GameObject.Instantiate(prefab);
+                newButton.transform.SetParent(contentPanel);
 
-            CraftItem craftButton = newButton.GetComponent<CraftItem>();
+                CraftItem craftButton = newButton.GetComponent<CraftItem>();
 
 
-            craftButton.Setup(weapon, this);
+                craftButton.Setup(weapon, this);
+            }
+            
         }
 
         for (int i = 0; i < armorList.Count; i++)
         {
             Armor armor = armorList[i];
-            GameObject newButton = (GameObject)GameObject.Instantiate(prefab);
-            newButton.transform.SetParent(contentPanel);
+            if (armor.buildingLvl <= blacksmith.level)
+            {
+                GameObject newButton = (GameObject)GameObject.Instantiate(prefab);
+                newButton.transform.SetParent(contentPanel);
 
-            CraftItem craftButton = newButton.GetComponent<CraftItem>();
+                CraftItem craftButton = newButton.GetComponent<CraftItem>();
 
-            craftButton.Setup(armor, this);
+                craftButton.Setup(armor, this);
+            }
         }
     }
 
@@ -120,7 +127,6 @@ public class ItemList : MonoBehaviour
     /// <param name="item"></param>
     public void craftItem(Item item)
     {
-        //TODO will need to change this to be able to work with all of the buildings
         Kingdom kingdom = GameObject.Find("Kingdom").GetComponent<Kingdom>();
         Blacksmith blacksmith = GameObject.Find("Kingdom").GetComponent<Blacksmith>();
         if (kingdom.gold >= item.goldCost && blacksmith.level >= item.buildingLvl)
@@ -128,10 +134,14 @@ public class ItemList : MonoBehaviour
             kingdom.gold -= item.goldCost;
             if (item.itemCategory == 1)
             {
+                Debug.Log(item);
+                Debug.Log(kingdom.weapons);
                 kingdom.weapons.Add((Weapon)item);
             }
             else if (item.itemCategory == 2)
             {
+                Debug.Log(item);
+                Debug.Log(kingdom.armor);
                 kingdom.armor.Add((Armor)item);
             }
         }
