@@ -10,6 +10,8 @@ public class ItemList : MonoBehaviour
     public List<Weapon> weaponList;
     public List<Armor> armorList;
 
+    //TODO this class will ne to be updated with all of its logic when more buildings are added
+
     // Start is called before the first frame update
     void Start()
     {
@@ -134,14 +136,10 @@ public class ItemList : MonoBehaviour
             kingdom.gold -= item.goldCost;
             if (item.itemCategory == 1)
             {
-                Debug.Log(item);
-                Debug.Log(kingdom.weapons);
                 kingdom.weapons.Add((Weapon)item);
             }
             else if (item.itemCategory == 2)
             {
-                Debug.Log(item);
-                Debug.Log(kingdom.armor);
                 kingdom.armor.Add((Armor)item);
             }
         }

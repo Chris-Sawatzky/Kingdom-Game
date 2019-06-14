@@ -21,6 +21,8 @@ public class Kingdom : MonoBehaviour
     public List<Weapon> weapons;
     public List<Armor> armor;
 
+    public List<Hero> heroes;
+
 
     public GameObject inputField;
     public void assignKingdomName()
@@ -51,6 +53,7 @@ public class Kingdom : MonoBehaviour
 
         data.weapons = weapons;
         data.armor = armor;
+        data.heroes = heroes;
 
 
         return data;
@@ -88,6 +91,9 @@ public class Kingdom : MonoBehaviour
             //load the inventory lists
             weapons = data.weapons;
             armor = data.armor;
+
+            //load the heroes
+            heroes = data.heroes;
 
             //load the data for each of the buildings
             Blacksmith blacksmith = gameObject.GetComponent("Blacksmith") as Blacksmith;

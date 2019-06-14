@@ -14,4 +14,5 @@ public class KingdomData
 
     public List<Weapon> weapons = new List<Weapon>();
     public List<Armor> armor = new List<Armor>();
+    public List<Hero> heroes = new List<Hero>();
 }
