@@ -31,24 +31,24 @@ public class ItemList : MonoBehaviour
         for (int i = 0; i < weaponList.Count; i++)
         {
             Weapon weapon = weaponList[i];
-            GameObject newButton = (GameObject)GameObject.Instantiate(prefab);
-            newButton.transform.SetParent(contentPanel);
-
-            Inventory sellButton = newButton.GetComponent<Inventory>();
-
-            sellButton.Setup(weapon, this);
+            generateSellButton(weapon);
         }
 
         for (int i = 0; i < armorList.Count; i++)
         {
             Armor armor = armorList[i];
-            GameObject newButton = (GameObject)GameObject.Instantiate(prefab);
-            newButton.transform.SetParent(contentPanel);
-
-            Inventory sellButton = newButton.GetComponent<Inventory>();
-
-            sellButton.Setup(armor, this);
+            generateSellButton(armor);
         }
+    }
+
+    private void generateSellButton(Item item)
+    {
+        GameObject newButton = (GameObject)GameObject.Instantiate(prefab);
+        newButton.transform.SetParent(contentPanel);
+
+        Inventory sellButton = newButton.GetComponent<Inventory>();
+
+        sellButton.Setup(item, this);
     }
 
     /// <summary>
@@ -85,41 +85,38 @@ public class ItemList : MonoBehaviour
 
     /// <summary>
     /// populate the list of items you can craft will display the weapons first and then the armors
+    /// will check the items crafting level against the building level of the building passed in to it
     /// (I feel like there is a better way to do this but I cant think of it)
     /// </summary>
-    public void AddButtons()
+    public void AddButtons(Building building)
     {
-        Blacksmith blacksmith = GameObject.Find("Kingdom").GetComponent<Blacksmith>();
         for (int i = 0; i < weaponList.Count; i++)
         {
-            
             Weapon weapon = weaponList[i];
-            if (weapon.buildingLvl <= blacksmith.level)
-            {
-                GameObject newButton = (GameObject)GameObject.Instantiate(prefab);
-                newButton.transform.SetParent(contentPanel);
-
-                CraftItem craftButton = newButton.GetComponent<CraftItem>();
-
-
-                craftButton.Setup(weapon, this);
-            }
+            generateCraftButton(weapon, building);
             
         }
 
         for (int i = 0; i < armorList.Count; i++)
         {
             Armor armor = armorList[i];
-            if (armor.buildingLvl <= blacksmith.level)
-            {
-                GameObject newButton = (GameObject)GameObject.Instantiate(prefab);
-                newButton.transform.SetParent(contentPanel);
-
-                CraftItem craftButton = newButton.GetComponent<CraftItem>();
-
-                craftButton.Setup(armor, this);
-            }
+            generateCraftButton(armor, building);
         }
+    }
+
+
+    private void generateCraftButton(Item item, Building building)
+    {
+        if (item.buildingLvl <= building.level)
+        {
+            GameObject newButton = (GameObject)GameObject.Instantiate(prefab);
+            newButton.transform.SetParent(contentPanel);
+
+            CraftItem craftButton = newButton.GetComponent<CraftItem>();
+
+            craftButton.Setup(item, this);
+        }
+        
     }
 
     /// <summary>
@@ -130,8 +127,8 @@ public class ItemList : MonoBehaviour
     public void craftItem(Item item)
     {
         Kingdom kingdom = GameObject.Find("Kingdom").GetComponent<Kingdom>();
-        Blacksmith blacksmith = GameObject.Find("Kingdom").GetComponent<Blacksmith>();
-        if (kingdom.gold >= item.goldCost && blacksmith.level >= item.buildingLvl)
+        //TODO in the editor just use the Building script for all the buildings, dont need a script for individual buildings
+        if (kingdom.gold >= item.goldCost)// shouldnt have to worry about checking the building level as you wont see the item if you cant craft it
         {
             kingdom.gold -= item.goldCost;
             if (item.itemCategory == 1)

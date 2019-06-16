@@ -40,8 +40,9 @@ public class Kingdom : MonoBehaviour
 
     public KingdomData CreateKingdomDataObject()
     {
-        Blacksmith blacksmith = gameObject.GetComponent("Blacksmith") as Blacksmith;
-        
+        Blacksmith blacksmith = GameObject.Find("Blacksmith").GetComponent<Blacksmith>();
+        //TODO Tailor is not yet saved (am unsure if this building will remain)
+
 
         KingdomData data = new KingdomData();
 
@@ -96,7 +97,7 @@ public class Kingdom : MonoBehaviour
             heroes = data.heroes;
 
             //load the data for each of the buildings
-            Blacksmith blacksmith = gameObject.GetComponent("Blacksmith") as Blacksmith;
+            Blacksmith blacksmith = GameObject.Find("Blacksmith").GetComponent<Blacksmith>();
             blacksmith.level = data.blacksmithLevel;
             blacksmith.upgradeCost = data.bsUpgradeCost;
             blacksmith.levelAsText.text = "Level: " + blacksmith.level;

@@ -13,8 +13,8 @@ public class Building : MonoBehaviour
 
     public void upgradeBuilding()
     {
-        Kingdom kingdom = gameObject.GetComponent("Kingdom") as Kingdom;
-        if(kingdom.gold >= upgradeCost)
+        Kingdom kingdom = GameObject.Find("Kingdom").GetComponent<Kingdom>();
+        if (kingdom.gold >= upgradeCost)
         {
             kingdom.gold -= upgradeCost;
             kingdom.goldAsText.text = "Gold: " + kingdom.gold;
