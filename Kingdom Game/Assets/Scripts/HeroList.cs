@@ -47,6 +47,21 @@ public class HeroList : MonoBehaviour
         }
     }
 
+    public void ListHeros()
+    {
+        Kingdom kingdom = GameObject.Find("Kingdom").GetComponent<Kingdom>();
+
+        for (int i = 0; i < kingdom.heroes.Count; i++)
+        {
+            GameObject newButton = (GameObject)GameObject.Instantiate(prefab);
+            newButton.transform.SetParent(contentPanel);
+
+            ListHero heroButton = newButton.GetComponent<ListHero>();
+
+            heroButton.Setup(kingdom.heroes[i], this);
+        }
+    }
+
     public void chooseClass(Hero hero)
     {
         // picks a random class in the heroes class list to activate (set their default class)
@@ -84,6 +99,7 @@ public class HeroList : MonoBehaviour
         {
             kingdom.gold -= hero.goldCost;
             kingdom.heroes.Add(hero);
+            //TODO remove the button for the hero that was hired
         }
     }
 }

@@ -10,8 +10,6 @@ public class ItemList : MonoBehaviour
     public List<Weapon> weaponList;
     public List<Armor> armorList;
 
-    //TODO this class will ne to be updated with all of its logic when more buildings are added
-
     // Start is called before the first frame update
     void Start()
     {

@@ -13,11 +13,19 @@ public class Hero
 
     public List<HeroClass> classList = new List<HeroClass>(); // list to put all the classes in so they can be picked at random when the hero is generated
 
+    //hero stats
+    public int HP = 100;
+    public int MP = 50;
+
     public int strength;
     public int dexterity;
     public int intelligence;
     public int goldCost;
     public string spriteName;
+
+    //hero equipment
+    public Weapon weapon;
+    public Armor chest;
 
     public Hero()
     {
