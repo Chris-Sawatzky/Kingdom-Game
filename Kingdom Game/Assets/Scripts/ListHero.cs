@@ -18,6 +18,7 @@ public class ListHero : MonoBehaviour
 
     private Hero hero;
     private HeroList heroList;
+    private EquipmentManager em;
 
 
     // Start is called before the first frame update
@@ -45,6 +46,7 @@ public class ListHero : MonoBehaviour
 
     public void HandleClick()
     {
-        //make a method to go to the equipment screen
+        em = GameObject.Find("Equipment Manager").GetComponent<EquipmentManager>();
+        em.displayHero(hero);
     }
 }

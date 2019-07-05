@@ -67,6 +67,8 @@
     <Compile Include="Assets\Scripts\Building.cs" />
     <Compile Include="Assets\Scripts\CloseGame.cs" />
     <Compile Include="Assets\Scripts\CraftItem.cs" />
+    <Compile Include="Assets\Scripts\EquipmentButton.cs" />
+    <Compile Include="Assets\Scripts\EquipmentManager.cs" />
     <Compile Include="Assets\Scripts\GenerateHero.cs" />
     <Compile Include="Assets\Scripts\Hero.cs" />
     <Compile Include="Assets\Scripts\HeroClass.cs" />
