@@ -63,7 +63,7 @@ public class Kingdom : MonoBehaviour
     //test method to make sure the gold is being saved and displayed properly
     public void boostGold()
     {
-        gold++;
+        gold += 100;
     }
 
     public void SaveKingdom()

@@ -20,45 +20,77 @@ public class EquipmentManager : MonoBehaviour
     public Transform contentPanel;
     public GameObject prefab;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public Hero heroToEquip;
 
     public void displayHero(Hero hero)
     {
-        displayHeroStats(hero);
-        displayHeroWeapon(hero);
+        heroToEquip = hero;
+
+        displayHeroStats();
+        displayHeroWeapon();
     }
 
-    private void displayHeroStats(Hero hero)
+    private void displayHeroStats()
     {
-        heroName.text = hero.name;
+        heroName.text = heroToEquip.name;
     }
 
-    private void displayHeroWeapon(Hero hero)
+    public void displayHeroWeapon()
     {
-        //the button will be invisible and should only be visible after clicking on a hero
-        GameObject button = GameObject.Find("Hero List").transform.GetChild(3).gameObject;
-        button.SetActive(true);
+        //these buttons will be invisible and should only be visible after clicking on a hero
+        GameObject weaponButton = GameObject.Find("Hero List").transform.GetChild(3).gameObject;
+        GameObject removeWeaponButton = GameObject.Find("Hero List").transform.GetChild(5).gameObject;
 
-        weaponName.text = hero.weapon.itemName;
+        weaponButton.SetActive(true);
+        removeWeaponButton.SetActive(true);
 
-        weaponPower.text = hero.weapon.minAttack + " - " + hero.weapon.maxAttack;
+        weaponName.text = heroToEquip.weapon.itemName;
 
-        weaponImage.sprite = Resources.Load<Sprite>(hero.weapon.spriteName);
+        weaponPower.text = heroToEquip.weapon.minAttack + " - " + heroToEquip.weapon.maxAttack;
+
+        weaponImage.sprite = Resources.Load<Sprite>(heroToEquip.weapon.spriteName);
     }
 
     private void displayHeroArmor()
     {
 
+    }
+
+    //TODO Major bug at the moment - any equipment that is unequiped will be lost, this will be handled with the unequip method
+    public void equipToHero(Item itemToEquip)
+    {
+        Kingdom kingdom = GameObject.Find("Kingdom").GetComponent<Kingdom>();
+
+        if (itemToEquip.itemCategory == 1)
+        {
+            //unequip the old weapon
+            unequipWeaponFromHero();
+            //equip the weapon to the selected hero
+            Weapon weaponToEquip = (Weapon)itemToEquip;
+            heroToEquip.weapon = weaponToEquip;
+            displayHeroWeapon();
+
+            //remove the weapon from the Kingdoms inventory
+            kingdom.weapons.Remove(weaponToEquip);
+
+            //re-display the weapon list without the now equipped weapon
+            RemoveButtons();
+            displayWeaponList();
+        }
+    }
+
+    public void unequipWeaponFromHero()
+    {
+        //check and make sure the the hero has an actual weapon equipped
+        if(!heroToEquip.weapon.itemName.Equals("Fists"))
+        {
+            //move the old weapon the the kingdoms list of weapons
+            Kingdom kingdom = GameObject.Find("Kingdom").GetComponent<Kingdom>();
+            kingdom.weapons.Add(heroToEquip.weapon);
+
+            //change the heros weapon to be "unequipped
+            heroToEquip.weapon = new Weapon("Fists", 1, 1, "Fists", 1);
+        }
     }
 
     public void displayWeaponList()
@@ -82,6 +114,11 @@ public class EquipmentManager : MonoBehaviour
         EquipmentButton button = newButton.GetComponent<EquipmentButton>();
 
         button.Setup(item, this);
+    }
+
+    public void clearStats()
+    {
+        heroName.text = "";
     }
 
     public void RemoveButtons()

@@ -24,7 +24,7 @@ public class Hero
     public string spriteName;
 
     //hero equipment
-    public Weapon weapon;
+    public Weapon weapon = new Weapon("Fists",1,1,"Fists",1);
     public Armor chest;
 
     public Hero()

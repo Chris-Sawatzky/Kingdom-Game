@@ -47,6 +47,7 @@ public class ListHero : MonoBehaviour
     public void HandleClick()
     {
         em = GameObject.Find("Equipment Manager").GetComponent<EquipmentManager>();
+        em.RemoveButtons();
         em.displayHero(hero);
     }
 }

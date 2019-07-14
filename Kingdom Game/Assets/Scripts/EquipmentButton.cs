@@ -14,6 +14,8 @@ public class EquipmentButton : MonoBehaviour
     private Weapon weapon;
     private Armor armor;
 
+    private EquipmentManager em;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +44,7 @@ public class EquipmentButton : MonoBehaviour
 
     private void HandleClick()
     {
-
+        em = GameObject.Find("Equipment Manager").GetComponent<EquipmentManager>();
+        em.equipToHero(item);
     }
 }

@@ -13,6 +13,7 @@ public class Item
     public string spriteName;
 
     // the category to determine what type of item it is
+    //TODO change the item category to be a string rather than a number for better readability
     public int itemCategory;
     // 1 = weapon
     // 2 = armor
