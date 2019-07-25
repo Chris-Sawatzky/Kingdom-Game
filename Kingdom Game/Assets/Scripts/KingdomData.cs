@@ -11,6 +11,7 @@ public class KingdomData
     public int stone = 0;
     public int blacksmithLevel = 0;
     public int bsUpgradeCost = 0;
+    public int completedRegions = 0;
 
     public List<Weapon> weapons = new List<Weapon>();
     public List<Armor> armor = new List<Armor>();

@@ -23,6 +23,9 @@ public class Kingdom : MonoBehaviour
 
     public List<Hero> heroes;
 
+    // a number that counts the number of completed regions to be used by each regionID to determine if it should be active or not
+    public int completedRegions = 0;
+
 
     public GameObject inputField;
     public void assignKingdomName()
@@ -56,6 +59,7 @@ public class Kingdom : MonoBehaviour
         data.armor = armor;
         data.heroes = heroes;
 
+        data.completedRegions = completedRegions;
 
         return data;
     }
@@ -95,6 +99,8 @@ public class Kingdom : MonoBehaviour
 
             //load the heroes
             heroes = data.heroes;
+
+            completedRegions = data.completedRegions;
 
             //load the data for each of the buildings
             Blacksmith blacksmith = GameObject.Find("Blacksmith").GetComponent<Blacksmith>();
