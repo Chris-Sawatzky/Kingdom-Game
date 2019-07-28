@@ -80,6 +80,7 @@
     <Compile Include="Assets\Scripts\KingdomData.cs" />
     <Compile Include="Assets\Scripts\ListHero.cs" />
     <Compile Include="Assets\Scripts\LoadScene.cs" />
+    <Compile Include="Assets\Scripts\MapManager.cs" />
     <Compile Include="Assets\Scripts\Region.cs" />
     <Compile Include="Assets\Scripts\Weapon.cs" />
     <Reference Include="Unity.Timeline.Editor">

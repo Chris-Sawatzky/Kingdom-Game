@@ -24,7 +24,7 @@ public class Kingdom : MonoBehaviour
     public List<Hero> heroes;
 
     // a number that counts the number of completed regions to be used by each regionID to determine if it should be active or not
-    public int completedRegions = 0;
+    public int highestLevelRegionActive = 0;
 
 
     public GameObject inputField;
@@ -59,7 +59,7 @@ public class Kingdom : MonoBehaviour
         data.armor = armor;
         data.heroes = heroes;
 
-        data.completedRegions = completedRegions;
+        data.highestLevelRegionActive = highestLevelRegionActive;
 
         return data;
     }
@@ -100,7 +100,7 @@ public class Kingdom : MonoBehaviour
             //load the heroes
             heroes = data.heroes;
 
-            completedRegions = data.completedRegions;
+            highestLevelRegionActive = data.highestLevelRegionActive;
 
             //load the data for each of the buildings
             Blacksmith blacksmith = GameObject.Find("Blacksmith").GetComponent<Blacksmith>();
