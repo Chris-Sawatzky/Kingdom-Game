@@ -11,6 +11,8 @@ public class Region : MonoBehaviour
     public bool isAvailable;
     Kingdom kingdom;
     private MapManager mM;
+
+    public List<Monster> regionMonsters;
     
 
     // Start is called before the first frame update

@@ -5,8 +5,19 @@ using UnityEngine;
 public class MapManager : MonoBehaviour
 {
     public List<Region> regions;
+    private List<Monster> battleMonsters;
+    public Zone zone;
     
 
+    //get the zone that was clicked on
+    public void setZone(Zone zone)
+    {
+        this.zone = zone;
+    }
+
+    //use the zones level range to determine which monsters to use in the regions list and send that list into the pre-battle game object
+    
+    
     /// <summary>
     /// takes in a region and will use the list to find the next region and set it to be active in the game
     /// </summary>
@@ -15,7 +26,6 @@ public class MapManager : MonoBehaviour
     {
         regions[region.regionID + 1].transform.gameObject.SetActive(true);
     }
-
 
     static int sortByRegionID(Region r1, Region r2)
     {

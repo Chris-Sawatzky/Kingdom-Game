@@ -81,8 +81,10 @@
     <Compile Include="Assets\Scripts\ListHero.cs" />
     <Compile Include="Assets\Scripts\LoadScene.cs" />
     <Compile Include="Assets\Scripts\MapManager.cs" />
+    <Compile Include="Assets\Scripts\Monster.cs" />
     <Compile Include="Assets\Scripts\Region.cs" />
     <Compile Include="Assets\Scripts\Weapon.cs" />
+    <Compile Include="Assets\Scripts\Zone.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Unity Projects/Kingdom Game/Kingdom Game/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
