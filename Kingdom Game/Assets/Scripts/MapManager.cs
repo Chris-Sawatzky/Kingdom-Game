@@ -5,7 +5,8 @@ using UnityEngine;
 public class MapManager : MonoBehaviour
 {
     public List<Region> regions;
-    private List<Monster> battleMonsters;
+    public List<Monster> battleMonsters = new List<Monster>();
+    public int numberofMonsters = 3; // the number of monsters to select from the list, or how many battles are going to happen
     public Zone zone;
     
 
@@ -15,7 +16,45 @@ public class MapManager : MonoBehaviour
         this.zone = zone;
     }
 
-    //use the zones level range to determine which monsters to use in the regions list and send that list into the pre-battle game object
+    /// <summary>
+    /// use the zones level range to determine which monsters to use in the regions list and send that list into the battleData class
+    //TODO make the battleData class
+    /// </summary>
+    public void buildMonsterList()
+    {
+        //create a temporary list of the monsters in that reagion that can be manipulated without changing the list in the region
+        List<Monster> tempList = new List<Monster>(regions[zone.parentRegionID].regionMonsters);
+
+        //clear the current list of monsters, so you only have the three that you want
+        battleMonsters.Clear();
+
+        // loop through for however many monster you wnat to battle
+        for (int i = 0; i < numberofMonsters; i++)
+        {
+            Monster monster = null;
+
+            do
+            {
+                int tempListIndex = Random.Range(0, tempList.Count - 1);//determine what index to check
+                Monster monsterToCheck = tempList[tempListIndex]; // get the monster from that index
+
+                // if the monster at the index checked does not fall within the correct level range remove it from the temp list
+                // otherwise assign it to monster to be added to the list of monsters to battle
+                if (monsterToCheck.level > zone.maxLevel && monsterToCheck.level < zone.minLevel)
+                {
+                    tempList.RemoveAt(tempListIndex);
+                }
+                else
+                {
+                    monster = monsterToCheck;
+                }
+                
+            }
+            while (monster == null);
+
+            battleMonsters.Add(monster);
+        }
+    }
     
     
     /// <summary>
