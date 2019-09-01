@@ -9,14 +9,17 @@ using UnityEngine.UI;
 public class Kingdom : MonoBehaviour
 {
     //variables to be used in calculations etc.
+    //TODO will need to put the resources into a list
     new public string name;
     public int gold = 0;
-    public int wood = 0;// not saved yet
-    public int stone = 0;// not saved yet
+    public int wood = 0;
+    public int stone = 0;
 
     //variables to be displayed on screen
     public Text KingdomName;
     public Text goldAsText;
+    public Text woodAsText;
+    public Text stoneAsText;
 
     public List<Weapon> weapons;
     public List<Armor> armor;
@@ -39,6 +42,8 @@ public class Kingdom : MonoBehaviour
     {
         KingdomName.text = name;
         goldAsText.text = "Gold: " + gold;
+        woodAsText.text = "Wood: " + wood;
+        stoneAsText.text = "Stone: " + stone;
     }
 
     public KingdomData CreateKingdomDataObject()
@@ -70,6 +75,7 @@ public class Kingdom : MonoBehaviour
         gold += 100;
     }
 
+    //TODO look into creating multiple save files
     public void SaveKingdom()
     {
         KingdomData data = CreateKingdomDataObject();
