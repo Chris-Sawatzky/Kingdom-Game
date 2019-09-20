@@ -34,7 +34,7 @@ public class GenerateHero : MonoBehaviour
         strength.text = "Str: " + hero.strength;
         dexterity.text = "Dex: " + hero.dexterity;
         intelligence.text = "Int: " + hero.intelligence;
-        heroClass.text = hero.getActiveClass();
+        heroClass.text = hero.getActiveClass().className;
         heroImage.sprite = Resources.Load<Sprite>(hero.spriteName);
         goldCost.text = "Cost: " + hero.goldCost;
 

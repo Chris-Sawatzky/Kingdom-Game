@@ -7,11 +7,11 @@ public class Hero
 {
     public string name;
     // all heros will be able to switch between classes so just instantiate all of the classess immediately
-    private HeroClass warrior = new HeroClass("warrior", 1, "str");
-    private HeroClass mage = new HeroClass("mage", 1, "dex");
-    private HeroClass archer = new HeroClass("archer", 1, "int");
-
-    public List<HeroClass> classList = new List<HeroClass>(); // list to put all the classes in so they can be picked at random when the hero is generated
+    public List<HeroClass> classList = new List<HeroClass> {
+        new HeroClass("warrior", 1, "str"),
+        new HeroClass("mage", 1, "dex"),
+        new HeroClass("archer", 1, "int")
+    }; // list to put all the classes in so they can be picked at random when the hero is generated
 
     //hero stats
     public int HP = 100;
@@ -29,14 +29,12 @@ public class Hero
 
     public Hero()
     {
-        classList.Add(warrior);
-        classList.Add(mage);
-        classList.Add(archer);
+        
     }
 
-    public string getActiveClass()
+    public HeroClass getActiveClass()
     {
-        string activeClass = "";
+        HeroClass activeClass = null;
         bool classFound = false;
         int classToCheck = 0;
 
@@ -45,7 +43,7 @@ public class Hero
             if (classList[classToCheck].active)
             {
                 classFound = true;
-                activeClass = classList[classToCheck].className;
+                activeClass = classList[classToCheck];
             }
             classToCheck++;
         }

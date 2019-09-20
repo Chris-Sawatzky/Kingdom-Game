@@ -11,6 +11,15 @@ public class HeroList : MonoBehaviour
     public List<string> heroNames;
     public List<string> sprites;
 
+    //four plank hero objects that will be filled as heroes are selected for the mission
+    public List<Hero> selectedHeros = new List<Hero>
+    {
+        new Hero(),
+        new Hero(),
+        new Hero(),
+        new Hero(),
+    };
+
 
     // Start is called before the first frame update
     void Start()
@@ -46,7 +55,9 @@ public class HeroList : MonoBehaviour
 
         }
     }
-
+    /// <summary>
+    /// list the heros in the equipment screen to be able to change equipment
+    /// </summary>
     public void ListHeros()
     {
         Kingdom kingdom = GameObject.Find("Kingdom").GetComponent<Kingdom>();
@@ -60,6 +71,32 @@ public class HeroList : MonoBehaviour
 
             heroButton.Setup(kingdom.heroes[i], this);
         }
+    }
+    /// <summary>
+    /// list the heroes in the hero selection sqreen when going on a mission
+    /// </summary>
+    public void ListHerosToSelect()
+    {
+        Kingdom kingdom = GameObject.Find("Kingdom").GetComponent<Kingdom>();
+
+        for (int i = 0; i < kingdom.heroes.Count; i++)
+        {
+            GameObject newButton = (GameObject)GameObject.Instantiate(prefab);
+            newButton.transform.SetParent(contentPanel);
+
+            HeroSelectList heroButton = newButton.GetComponent<HeroSelectList>();
+
+            heroButton.Setup(kingdom.heroes[i], this);
+        }
+    }
+
+    public void fillSelectedHeros()
+    {
+        //check if the current hero slot in the list is filled
+            //if the slot is empty fill it
+            //else check the next slot
+                //if there are no empty slots left do nothing
+        //update the screen to show the hero that was selected in the correct display area
     }
 
     public void chooseClass(Hero hero)

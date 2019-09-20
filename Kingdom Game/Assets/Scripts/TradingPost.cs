@@ -20,15 +20,11 @@ public class TradingPost : Building
 
     //TODO determine proper exchange rates
     //exchange rates
-    private List<int> exchangeRates;// 0 for wood, 1 for stone
+    private List<ExchangeRates> exchangeRates = new List<ExchangeRates> {
+        new ExchangeRates ("GoldToWood", 10),
+        new ExchangeRates ("GoldToStone", 5),
+    };
     //TODO use a formula to determine the rate based on the buildings level
-    private int exchangeRateGoldToWood = 10;
-
-    private void Start()
-    {
-        exchangeRates = new List<int>();
-        exchangeRates.Add(exchangeRateGoldToWood);// 10 wood will cost 1 gold
-    }
 
     
     /// <summary>
@@ -42,7 +38,7 @@ public class TradingPost : Building
         if (kingdom.gold >= amountOfGold && amountOfGold > 0)
         {
             kingdom.gold -= amountOfGold;
-            resourceToAdd += amountOfGold * exchangeRates[resource];
+            resourceToAdd += amountOfGold * exchangeRates[resource].valuePerOneGold;
         }
 
         //determine where to add the resources (this statement may get long depending on the different types of resources)
@@ -68,6 +64,9 @@ public class TradingPost : Building
                
         
     }
+
+    //TODO method to loop through the list of exchange rates changing them when the building is upgraded (will need to determine formula first)
+    //will also need to be updated when the game is loaded
 
 
 }

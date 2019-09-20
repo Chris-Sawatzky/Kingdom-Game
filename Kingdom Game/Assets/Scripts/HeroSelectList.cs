@@ -1,22 +1,19 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
-public class ListHero : MonoBehaviour
+public class HeroSelectList : MonoBehaviour
 {
     public Button button;
-    public Text HP;
-    public Text MP;
-    public Text heroName;
-    public Text strength;
-    public Text dexterity;
-    public Text intelligence;
-    public Text heroClass;
 
+    public Text heroName;
+    public Text heroClass;
+    public Text classLevel;
     public Image heroImage;
 
     private Hero hero;
     private HeroList heroList;
-    private EquipmentManager em;
 
 
     // Start is called before the first frame update
@@ -31,12 +28,8 @@ public class ListHero : MonoBehaviour
         hero = currentHero;
 
         heroName.text = hero.name;
-        HP.text = "HP: " + hero.HP;
-        MP.text = "MP: " + hero.MP;
-        strength.text = "Str: " + hero.strength;
-        dexterity.text = "Dex: " + hero.dexterity;
-        intelligence.text = "Int: " + hero.intelligence;
         heroClass.text = hero.getActiveClass().className;
+        classLevel.text = "Level: " + hero.getActiveClass().classLevel;
         heroImage.sprite = Resources.Load<Sprite>(hero.spriteName);
 
         heroList = currentList;
@@ -44,8 +37,6 @@ public class ListHero : MonoBehaviour
 
     public void HandleClick()
     {
-        em = GameObject.Find("Equipment Manager").GetComponent<EquipmentManager>();
-        em.RemoveButtons();
-        em.displayHero(hero);
+        
     }
 }

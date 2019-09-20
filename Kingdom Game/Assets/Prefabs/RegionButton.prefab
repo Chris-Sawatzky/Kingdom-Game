@@ -169,8 +169,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: buildMonsterList
+      - m_Target: {fileID: 11500000, guid: de838a205c6d5a34d8c94e4506663f66, type: 3}
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -195,8 +195,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentRegionID: 0
-  maxLevel: 0
-  minLevel: 0
+  maxLevel: 2
+  minLevel: 1
 --- !u!1 &2691465161445148464
 GameObject:
   m_ObjectHideFlags: 0

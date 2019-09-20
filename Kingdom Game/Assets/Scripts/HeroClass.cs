@@ -6,8 +6,8 @@ using UnityEngine;
 public class HeroClass
 {
     public string className;
-    private int classLevel;
-    private string baseStat;
+    public int classLevel;
+    public string baseStat;
     public bool active = false;
 
 
