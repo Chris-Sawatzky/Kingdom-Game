@@ -18,11 +18,10 @@ public class MapManager : MonoBehaviour
 
     /// <summary>
     /// use the zones level range to determine which monsters to use in the regions list and send that list into the battleData class
-    //TODO make the battleData class
     /// </summary>
     public void buildMonsterList()
     {
-        //create a temporary list of the monsters in that reagion that can be manipulated without changing the list in the region
+        //create a temporary list of the monsters in that region that can be manipulated without changing the list in the region
         List<Monster> tempList = new List<Monster>(regions[zone.parentRegionID].regionMonsters);
 
         //clear the current list of monsters, so you only have the three that you want
@@ -54,9 +53,19 @@ public class MapManager : MonoBehaviour
 
             battleMonsters.Add(monster);
         }
+        assignToBattlePrepData();
     }
     
-    
+    /// <summary>
+    /// assigns the information for the upcoming battle (the list of monsters that was built, and the zone the battle will take place in)
+    /// from this class into the static class battlePrepData
+    /// </summary>
+    private void assignToBattlePrepData()
+    {
+        BattlePrepData.monsters = battleMonsters;
+        BattlePrepData.zone = zone;
+    }
+
     /// <summary>
     /// takes in a region and will use the list to find the next region and set it to be active in the game
     /// </summary>

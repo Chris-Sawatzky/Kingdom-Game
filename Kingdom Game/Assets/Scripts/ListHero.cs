@@ -25,7 +25,7 @@ public class ListHero : MonoBehaviour
         button.onClick.AddListener(HandleClick);
     }
 
-    // setup the button to display in the crafting list
+    // setup the button to display in the hero list
     public void Setup(Hero currentHero, HeroList currentList)
     {
         hero = currentHero;
@@ -37,7 +37,7 @@ public class ListHero : MonoBehaviour
         dexterity.text = "Dex: " + hero.dexterity;
         intelligence.text = "Int: " + hero.intelligence;
         heroClass.text = hero.getActiveClass().className;
-        heroImage.sprite = Resources.Load<Sprite>(hero.spriteName);
+        heroImage.sprite = Resources.Load<Sprite>(hero.portraitSpriteName);
 
         heroList = currentList;
     }

@@ -22,7 +22,6 @@ public class HeroSelectList : MonoBehaviour
         button.onClick.AddListener(HandleClick);
     }
 
-    // setup the button to display in the crafting list
     public void Setup(Hero currentHero, HeroList currentList)
     {
         hero = currentHero;
@@ -30,13 +29,13 @@ public class HeroSelectList : MonoBehaviour
         heroName.text = hero.name;
         heroClass.text = hero.getActiveClass().className;
         classLevel.text = "Level: " + hero.getActiveClass().classLevel;
-        heroImage.sprite = Resources.Load<Sprite>(hero.spriteName);
+        heroImage.sprite = Resources.Load<Sprite>(hero.portraitSpriteName);
 
         heroList = currentList;
     }
 
     public void HandleClick()
     {
-        
+        heroList.addSelectedHero(hero);
     }
 }

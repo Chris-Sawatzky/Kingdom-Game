@@ -37,7 +37,6 @@ public class Kingdom : MonoBehaviour
         Debug.Log("Kingdom name is " + name);
     }
 
-    
     void Update()
     {
         KingdomName.text = name;

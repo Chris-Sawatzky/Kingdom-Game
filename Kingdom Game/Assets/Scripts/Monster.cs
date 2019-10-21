@@ -13,6 +13,6 @@ public class Monster
     public int hitPoints;
     public int power;
 
-    //will add abilities one the skills class is created
+    //TODO add abilities to the monsters
 
 }

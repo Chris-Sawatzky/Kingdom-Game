@@ -11,23 +11,13 @@ public class HeroList : MonoBehaviour
     public List<string> heroNames;
     public List<string> sprites;
 
-    //four plank hero objects that will be filled as heroes are selected for the mission
-    public List<Hero> selectedHeros = new List<Hero>
-    {
-        new Hero(),
-        new Hero(),
-        new Hero(),
-        new Hero(),
-    };
+    //the list that will store the heroes to go on the mission
+    public List<Hero> missionRoster;
 
+    //the list of selectedHero prefabs used to display the hero on the screen
+    public List<SelectedHero> heroDisplay;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    //TODO add acost associated with generating heroes
+    //TODO add a cost associated with generating heroes
     public void GenerateHeroes()
     {
         // only generate the number of heroes specified in the editor
@@ -44,7 +34,7 @@ public class HeroList : MonoBehaviour
 
             //choose a sprite name to assign to the hero at random from the list in editor
             //this will be loaded later
-            newHero.spriteName = sprites[Random.Range(0, sprites.Count - 1)];
+            newHero.portraitSpriteName = sprites[Random.Range(0, sprites.Count - 1)];
 
             chooseClass(newHero);
             generateStats(newHero);
@@ -55,6 +45,7 @@ public class HeroList : MonoBehaviour
 
         }
     }
+    //TODO pass the button style to use as a variable and refactor these into one method
     /// <summary>
     /// list the heros in the equipment screen to be able to change equipment
     /// </summary>
@@ -73,7 +64,7 @@ public class HeroList : MonoBehaviour
         }
     }
     /// <summary>
-    /// list the heroes in the hero selection sqreen when going on a mission
+    /// list the heroes in the hero selection screen when going on a mission
     /// </summary>
     public void ListHerosToSelect()
     {
@@ -90,13 +81,28 @@ public class HeroList : MonoBehaviour
         }
     }
 
-    public void fillSelectedHeros()
+    /// <summary>
+    /// add the hero that was selected from the hero selection screen to the list selectedHeros
+    /// </summary>
+    public void addSelectedHero(Hero hero)
     {
-        //check if the current hero slot in the list is filled
-            //if the slot is empty fill it
-            //else check the next slot
-                //if there are no empty slots left do nothing
+        //check if there are less than 4 heros in the list
+        if (missionRoster.Count < 4 && !missionRoster.Contains(hero))
+        {
+            missionRoster.Add(hero);
+            heroDisplay[missionRoster.Count - 1].displaySelectedHero(hero);
+        }
         //update the screen to show the hero that was selected in the correct display area
+        
+    }
+
+    public void clearAll()
+    {
+        missionRoster.Clear();
+        for (int i = 0; i < heroDisplay.Count; i++)
+        {
+            heroDisplay[i].clearHero();
+        }
     }
 
     public void chooseClass(Hero hero)

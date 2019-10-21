@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Zone : MonoBehaviour
 {
     //each zone will need to know which region it belongs to

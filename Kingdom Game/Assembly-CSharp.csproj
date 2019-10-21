@@ -62,7 +62,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Ability.cs" />
     <Compile Include="Assets\Scripts\Armor.cs" />
+    <Compile Include="Assets\Scripts\BattlePrepData.cs" />
     <Compile Include="Assets\Scripts\Blacksmith.cs" />
     <Compile Include="Assets\Scripts\Building.cs" />
     <Compile Include="Assets\Scripts\CloseGame.cs" />
@@ -85,6 +87,7 @@
     <Compile Include="Assets\Scripts\MapManager.cs" />
     <Compile Include="Assets\Scripts\Monster.cs" />
     <Compile Include="Assets\Scripts\Region.cs" />
+    <Compile Include="Assets\Scripts\SelectedHero.cs" />
     <Compile Include="Assets\Scripts\TradingPost.cs" />
     <Compile Include="Assets\Scripts\Weapon.cs" />
     <Compile Include="Assets\Scripts\Zone.cs" />

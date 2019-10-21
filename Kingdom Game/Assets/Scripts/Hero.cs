@@ -21,7 +21,7 @@ public class Hero
     public int dexterity;
     public int intelligence;
     public int goldCost;
-    public string spriteName;
+    public string portraitSpriteName;
 
     //hero equipment
     public Weapon weapon = new Weapon("Fists",1,1,"Fists",1);
