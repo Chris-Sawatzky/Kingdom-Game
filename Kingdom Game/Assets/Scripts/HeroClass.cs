@@ -37,7 +37,7 @@ public class HeroClass
     public void assignAbilities()
     {
         //all classes will have the ability attack
-        Ability attack = new Ability("attack", 1, 50, 1);
+        Ability attack = new Ability("attack","Basic attack to deal damage to the target", 1, 50, 1,0, "strength");
         abilities.Add(attack);
 
         //TODO add the abilites for each of the classes in the game
@@ -47,7 +47,7 @@ public class HeroClass
         //else if the class is mage
             //instantiate these abilities
         //else if the class is archer
-            //instantiate these abilies
+            //instantiate these abilities
     }
 
     /// <summary>

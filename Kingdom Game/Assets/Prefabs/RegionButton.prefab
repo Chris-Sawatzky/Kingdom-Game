@@ -180,6 +180,50 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2691465161445148464}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &2545202785869853857
@@ -1080,24 +1124,52 @@ MonoBehaviour:
   regionMonsters:
   - name: Monster1
     spriteName: 
+    HP: 0
+    MP: 0
     level: 1
-    hitPoints: 100
     power: 5
+    abilities:
+    - abilityName: attack
+      abilityDescription: Basic attack to damage the target
+      lvlRequirement: 1
+      hitPercentage: 50
+      dmgRatio: 1
   - name: Monster2
     spriteName: 
+    HP: 0
+    MP: 0
     level: 2
-    hitPoints: 150
     power: 10
+    abilities:
+    - abilityName: attack
+      abilityDescription: Basic attack to damage the target
+      lvlRequirement: 1
+      hitPercentage: 50
+      dmgRatio: 1
   - name: Monster3
     spriteName: 
+    HP: 0
+    MP: 0
     level: 3
-    hitPoints: 200
     power: 15
+    abilities:
+    - abilityName: attack
+      abilityDescription: Basic attack to damage the target
+      lvlRequirement: 1
+      hitPercentage: 50
+      dmgRatio: 1
   - name: Monster4
     spriteName: 
+    HP: 0
+    MP: 0
     level: 4
-    hitPoints: 250
     power: 20
+    abilities:
+    - abilityName: attack
+      abilityDescription: Basic attack to damage the target
+      lvlRequirement: 1
+      hitPercentage: 50
+      dmgRatio: 1
 --- !u!1 &8532854574422725777
 GameObject:
   m_ObjectHideFlags: 0

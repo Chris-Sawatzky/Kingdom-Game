@@ -4,15 +4,14 @@ using UnityEngine;
 
 [System.Serializable]
 
-public class Monster
+public class Monster : Combatant
 {
-    public string name;
-    // the sprite will be displayed in the battler as a full monster not just a character portrait
-    public string spriteName;
     public int level;
-    public int hitPoints;
-    public int power;
 
-    //TODO add abilities to the monsters
+    public List<Ability> abilities = new List<Ability>
+    {
+        new Ability("attack","Basic attack to damage the target",1, 50,1,0,"strength")
+    };
+
 
 }
