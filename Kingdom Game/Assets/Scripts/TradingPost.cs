@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
-using UnityEngine;
+﻿using System.Collections.Generic;
 using UnityEngine.UI;
 
 /// <summary>
@@ -16,6 +11,9 @@ public class TradingPost : Building
     public Kingdom kingdom;
     public InputField inputField;
 
+    public Text woodExchangeRate;
+    public Text stoneExchangeRate;
+
     private int amountOfGold;
 
     //TODO determine proper exchange rates
@@ -26,11 +24,23 @@ public class TradingPost : Building
     };
     //TODO use a formula to determine the rate based on the buildings level
 
+    public void Start()
+    {
+        //updateExchangeRate();
+        setExchangRateDisplay();
+    }
+
+    public void setExchangRateDisplay()
+    {
+        woodExchangeRate.text = exchangeRates[0].valuePerOneGold + " wood per gold";
+        stoneExchangeRate.text = exchangeRates[1].valuePerOneGold + " stone per gold";
+    }
+
     
     /// <summary>
-    /// 
+    /// uses the resource value to determine which resource to add the number to in the kingdom
     /// </summary>
-    /// <param name="exchangeRateToUse">value that will index into the exchangeRates list to detemine which rate to use</param>
+    /// <param name="resource">the resource value that is passed in by the button that was clicked</param>
     public void buyMaterial(int resource)
     {
         int resourceToAdd = 0;
@@ -66,7 +76,7 @@ public class TradingPost : Building
     }
 
     //TODO method to loop through the list of exchange rates changing them when the building is upgraded (will need to determine formula first)
-    //will also need to be updated when the game is loaded
-
+    //updateExchangRate()
+    
 
 }
