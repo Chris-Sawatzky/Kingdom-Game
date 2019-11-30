@@ -13,6 +13,11 @@ public class EquipmentManager : MonoBehaviour
     public Text weaponPower;
     public Image weaponImage;
 
+    //fields for displaying the upper body armor
+    public Text UBArmorName;
+    public Text UBArmorPower;
+    public Image UBArmorImage;
+
     //the lists of weapon and armor in the kingdoms inventory
     private List<Weapon> weaponList;
     private List<Armor> armorList;
@@ -27,7 +32,9 @@ public class EquipmentManager : MonoBehaviour
         heroToEquip = hero;
 
         displayHeroStats();
-        displayHeroWeapon();
+        displayHeroEquipment();
+        displayRemoveItemButton();
+        
     }
 
     private void displayHeroStats()
@@ -35,28 +42,42 @@ public class EquipmentManager : MonoBehaviour
         heroName.text = heroToEquip.name;
     }
 
-    public void displayHeroWeapon()
+    /// <summary>
+    /// displays the selected heroes current equipment
+    /// </summary>
+    public void displayHeroEquipment()
     {
         //these buttons will be invisible and should only be visible after clicking on a hero
         GameObject weaponButton = GameObject.Find("Hero List").transform.GetChild(3).gameObject;
-        GameObject removeWeaponButton = GameObject.Find("Hero List").transform.GetChild(5).gameObject;
+        GameObject UBArmorButton = GameObject.Find("Hero List").transform.GetChild(4).gameObject;
 
+        //set weapon attributes
         weaponButton.SetActive(true);
-        removeWeaponButton.SetActive(true);
-
         weaponName.text = heroToEquip.weapon.itemName;
-
         weaponPower.text = heroToEquip.weapon.minAttack + " - " + heroToEquip.weapon.maxAttack;
-
         weaponImage.sprite = Resources.Load<Sprite>(heroToEquip.weapon.spriteName);
+
+        //set upper body armor attributes
+        UBArmorButton.SetActive(true);
+        UBArmorName.text = heroToEquip.chest.itemName;
+        UBArmorPower.text = heroToEquip.chest.defenseRating.ToString();
+        UBArmorImage.sprite = Resources.Load<Sprite>(heroToEquip.chest.spriteName);
     }
 
-    private void displayHeroArmor()
+    /// <summary>
+    /// display the button to unequip the selected item
+    /// </summary>
+    public void displayRemoveItemButton()
     {
-
+        GameObject unequipItemButton = GameObject.Find("Hero List").transform.GetChild(6).gameObject;
+        unequipItemButton.SetActive(true);
     }
 
-    //TODO Major bug at the moment - any equipment that is unequiped will be lost, this will be handled with the unequip method
+    /// <summary>
+    /// equips the item that was selected from the list to the appropriate slot on the hero and then
+    /// removes it from the kingdoms inventory
+    /// </summary>
+    /// <param name="itemToEquip">the item to equip on the hero</param>
     public void equipToHero(Item itemToEquip)
     {
         Kingdom kingdom = GameObject.Find("Kingdom").GetComponent<Kingdom>();
@@ -68,7 +89,7 @@ public class EquipmentManager : MonoBehaviour
             //equip the weapon to the selected hero
             Weapon weaponToEquip = (Weapon)itemToEquip;
             heroToEquip.weapon = weaponToEquip;
-            displayHeroWeapon();
+            displayHeroEquipment();
 
             //remove the weapon from the Kingdoms inventory
             kingdom.weapons.Remove(weaponToEquip);
@@ -77,32 +98,56 @@ public class EquipmentManager : MonoBehaviour
             RemoveButtons();
             displayWeaponList();
         }
+        //TODO expand function to equip armor
     }
 
+    /// <summary>
+    /// removes the weapon from the hero and then adds it back into the kingdoms inventory provided it is equipment
+    /// </summary>
     public void unequipWeaponFromHero()
     {
-        //check and make sure the the hero has an actual weapon equipped
+        //check and make sure the the hero has an actual item equipped
         if(!heroToEquip.weapon.itemName.Equals("Fists"))
         {
-            //move the old weapon the the kingdoms list of weapons
+            //move the old weapon the correct list
             Kingdom kingdom = GameObject.Find("Kingdom").GetComponent<Kingdom>();
             kingdom.weapons.Add(heroToEquip.weapon);
-
-            //change the heros weapon to be "unequipped
+            //change the heros weapon to be "unequipped"
             heroToEquip.weapon = new Weapon("Fists", 1, 1, "Fists", 1);
         }
     }
 
+    /// <summary>
+    /// displays all of the weapons in the knigdoms inventory
+    /// </summary>
     public void displayWeaponList()
     {
         Kingdom kingdom = GameObject.Find("Kingdom").GetComponent<Kingdom>();
         weaponList = kingdom.weapons;
-        armorList = kingdom.armor;
 
         for (int i = 0; i < weaponList.Count; i++)
         {
             Weapon weapon = weaponList[i];
             generateButton(weapon);
+        }
+    }
+
+    /// <summary>
+    /// will display all of the armor of the appropriate slot in the kingdoms inventory
+    /// </summary>
+    /// <param name="slot">the slot that will be displayed ie. chest</param>
+    public void displayArmorList(string slot)
+    {
+        Kingdom kingdom = GameObject.Find("Kingdom").GetComponent<Kingdom>();
+        armorList = kingdom.armor;
+
+        for (int i = 0; i < armorList.Count; i++)
+        {
+            Armor armor = armorList[i];
+            if(armor.bodyLocation.ToUpper().Equals(slot.ToUpper()))
+            {
+                generateButton(armor);
+            }
         }
     }
 

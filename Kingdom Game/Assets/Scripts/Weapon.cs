@@ -15,6 +15,7 @@ public class Weapon : Item
         this.maxAttack = maxAttack;
         this.spriteName = spriteName;
         this.itemCategory = itemCategory;
+        itemType = "weapon";
     }
 }
 

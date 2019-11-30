@@ -17,4 +17,5 @@ public class Item
     public int itemCategory;
     // 1 = weapon
     // 2 = armor
+    public string itemType;
 }

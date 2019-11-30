@@ -9,4 +9,14 @@ public class Armor : Item
     //will determine wheter it goes on head, upper, or lower body
     public string bodyLocation;
 
+    public Armor(string name, string bodyLocation, int defenseRating, string spriteName, int itemCategory)
+    {
+        itemName = name;
+        this.bodyLocation = bodyLocation;
+        this.defenseRating = defenseRating;
+        this.spriteName = spriteName;
+        this.itemCategory = itemCategory;
+        itemType = "armor";
+
+    }
 }
