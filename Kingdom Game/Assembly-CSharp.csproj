@@ -65,8 +65,8 @@
     <Compile Include="Assets\Scripts\Ability.cs" />
     <Compile Include="Assets\Scripts\Armor.cs" />
     <Compile Include="Assets\Scripts\BattlePrepData.cs" />
-    <Compile Include="Assets\Scripts\Blacksmith.cs" />
     <Compile Include="Assets\Scripts\Building.cs" />
+    <Compile Include="Assets\Scripts\ClassManager.cs" />
     <Compile Include="Assets\Scripts\CloseGame.cs" />
     <Compile Include="Assets\Scripts\Combatant.cs" />
     <Compile Include="Assets\Scripts\CraftItem.cs" />

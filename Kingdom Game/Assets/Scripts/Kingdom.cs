@@ -29,7 +29,6 @@ public class Kingdom : MonoBehaviour
     // a number that counts the number of completed regions to be used by each regionID to determine if it should be active or not
     public int highestLevelRegionActive = 0;
 
-
     public GameObject inputField;
     public void assignKingdomName()
     {
@@ -47,7 +46,7 @@ public class Kingdom : MonoBehaviour
 
     public KingdomData CreateKingdomDataObject()
     {
-        Blacksmith blacksmith = GameObject.Find("Blacksmith").GetComponent<Blacksmith>();
+        Building blacksmith = GameObject.Find("Blacksmith").GetComponent<Building>();
         //TODO Tailor is not yet saved (am unsure if this building will remain)
 
 
@@ -108,7 +107,7 @@ public class Kingdom : MonoBehaviour
             highestLevelRegionActive = data.highestLevelRegionActive;
 
             //load the data for each of the buildings
-            Blacksmith blacksmith = GameObject.Find("Blacksmith").GetComponent<Blacksmith>();
+            Building blacksmith = GameObject.Find("Blacksmith").GetComponent<Building>();
             blacksmith.level = data.blacksmithLevel;
             blacksmith.upgradeCost = data.bsUpgradeCost;
             blacksmith.levelAsText.text = "Level: " + blacksmith.level;

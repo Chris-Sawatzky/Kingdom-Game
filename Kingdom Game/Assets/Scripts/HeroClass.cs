@@ -65,4 +65,9 @@ public class HeroClass
     {
         active = false;
     }
+
+    public override string ToString()
+    {
+        return className;
+    }
 }

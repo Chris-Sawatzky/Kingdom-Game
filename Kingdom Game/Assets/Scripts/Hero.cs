@@ -17,7 +17,7 @@ public class Hero : Combatant
 
     //hero equipment
     public Weapon weapon = new Weapon("Fists",1,1,"Fists",1);
-    public Armor chest = new Armor("shirt", "upper body", 1,"shirt",2);
+    public Armor UBArmor = new Armor("shirt", "upper body", 1,"shirt",2);
 
     public Hero()
     {
