@@ -7,9 +7,9 @@ public class Hero : Combatant
 {
     // all heros will be able to switch between classes so just instantiate all of the classess immediately
     public List<HeroClass> classList = new List<HeroClass> {
-        new HeroClass("warrior", 1, "str"),
-        new HeroClass("mage", 1, "dex"),
-        new HeroClass("archer", 1, "int")
+        new HeroClass("warrior", 1, "str", "warriorIcon"),
+        new HeroClass("mage", 1, "dex", "mageIcon"),
+        new HeroClass("archer", 1, "int", "archerIcon")
     }; // list to put all the classes in so they can be picked at random when the hero is generated
 
     public int goldCost;

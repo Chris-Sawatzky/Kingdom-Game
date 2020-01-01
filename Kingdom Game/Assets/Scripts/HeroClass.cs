@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 /*
@@ -13,6 +14,7 @@ public class HeroClass
     public int classLevel;
     public string baseStat;
     public bool active = false;
+    public string ClassIconSpriteName;
 
     public List<Ability> abilities = new List<Ability>();
 
@@ -22,11 +24,12 @@ public class HeroClass
     /// <param name="className">name if the class</param>
     /// <param name="classLevel">level of the class</param>
     /// <param name="baseStat">the primary stat of the class that attacks will use to determine damage</param>
-    public HeroClass(string className, int classLevel, string baseStat)
+    public HeroClass(string className, int classLevel, string baseStat, string ClassIconSpriteName)
     {
         this.className = className;
         this.classLevel = classLevel;
         this.baseStat = baseStat;
+        this.ClassIconSpriteName = ClassIconSpriteName;
 
         assignAbilities();
     }

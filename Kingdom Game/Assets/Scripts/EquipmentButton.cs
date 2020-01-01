@@ -25,6 +25,7 @@ public class EquipmentButton : MonoBehaviour
     public void Setup(Item currentItem, EquipmentManager em)
     {
         item = currentItem;
+        this.em = em;
 
         equipmentName.text = item.itemName;
 
@@ -44,7 +45,7 @@ public class EquipmentButton : MonoBehaviour
 
     private void HandleClick()
     {
-        em = GameObject.Find("Hero Manager").GetComponent<EquipmentManager>();
+        //em = GameObject.Find("Hero Manager").GetComponent<EquipmentManager>();
         em.equipToHero(item);
     }
 }

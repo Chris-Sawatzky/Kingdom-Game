@@ -181,7 +181,7 @@ public class EquipmentManager : MonoBehaviour
     }
 
     /// <summary>
-    /// displays all of the weapons in the knigdoms inventory
+    /// displays all of the weapons in the kingdoms inventory
     /// </summary>
     public void displayWeaponList()
     {

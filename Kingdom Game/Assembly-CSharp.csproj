@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\BattlePrepData.cs" />
     <Compile Include="Assets\Scripts\Building.cs" />
     <Compile Include="Assets\Scripts\ClassManager.cs" />
+    <Compile Include="Assets\Scripts\ClassSelectionButton.cs" />
     <Compile Include="Assets\Scripts\CloseGame.cs" />
     <Compile Include="Assets\Scripts\Combatant.cs" />
     <Compile Include="Assets\Scripts\CraftItem.cs" />
