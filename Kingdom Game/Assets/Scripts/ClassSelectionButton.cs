@@ -28,7 +28,7 @@ public class ClassSelectionButton : MonoBehaviour
         className.text = heroClass.className;
         primaryStat.text = heroClass.baseStat;
         classLevel.text = heroClass.classLevel.ToString();
-        classIcon.sprite = Resources.Load<Sprite>(heroClass.ClassIconSpriteName);
+        classIcon.sprite = Resources.Load<Sprite>(heroClass.classIconSpriteName);
 
     }
 

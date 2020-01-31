@@ -25,7 +25,7 @@ public class Hero : Combatant
         MP = 50;
     }
 
-    public HeroClass getActiveClass()
+    public HeroClass GetActiveClass()
     {
         HeroClass activeClass = null;
         bool classFound = false;

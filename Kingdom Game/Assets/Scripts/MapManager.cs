@@ -39,7 +39,7 @@ public class MapManager : MonoBehaviour
 
                 // if the monster at the index checked does not fall within the correct level range remove it from the temp list
                 // otherwise assign it to monster to be added to the list of monsters to battle
-                if (monsterToCheck.level > zone.maxLevel && monsterToCheck.level < zone.minLevel)
+                if (monsterToCheck.level > zone.maxLevel && monsterToCheck.level < zone.minLevel && monsterToCheck.bossMonster == true)
                 {
                     tempList.RemoveAt(tempListIndex);
                 }
@@ -52,6 +52,8 @@ public class MapManager : MonoBehaviour
             while (monster == null);
 
             battleMonsters.Add(monster);
+
+            //TODO if bossZone is true then add the region boss from the monster list
         }
         assignToBattlePrepData();
     }
@@ -61,6 +63,9 @@ public class MapManager : MonoBehaviour
     /// from this class into the static class battlePrepData
     /// </summary>
     private void assignToBattlePrepData()
+        /*TODO instead of assigning this to the BattlePrepData class (that class is no longer needed for the route we have decided to take)
+         *this data will be directly placed into the battle manager which will then load the game objects with the given data 
+         */
     {
         BattlePrepData.monsters = battleMonsters;
         BattlePrepData.zone = zone;

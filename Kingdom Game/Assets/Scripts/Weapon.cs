@@ -8,7 +8,7 @@ public class Weapon : Item
     public int minAttack;
     public int maxAttack;
 
-    public Weapon(string itemName, int minAttack, int maxAttack, string spriteName, int itemCategory)
+    public Weapon(string itemName, int minAttack, int maxAttack, string spriteName, int itemCategory)//TODO get rid of itemCategory in weapon and just use itemType
     {
         this.itemName = itemName;
         this.minAttack = minAttack;

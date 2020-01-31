@@ -27,8 +27,8 @@ public class HeroSelectList : MonoBehaviour
         hero = currentHero;
 
         heroName.text = hero.name;
-        heroClass.text = hero.getActiveClass().className;
-        classLevel.text = "Level: " + hero.getActiveClass().classLevel;
+        heroClass.text = hero.GetActiveClass().className;
+        classLevel.text = "Level: " + hero.GetActiveClass().classLevel;
         heroImage.sprite = Resources.Load<Sprite>(hero.portraitSpriteName);
 
         heroList = currentList;

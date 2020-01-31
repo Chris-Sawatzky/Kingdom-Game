@@ -7,6 +7,7 @@ using UnityEngine;
 public class Monster : Combatant
 {
     public int level;
+    public bool bossMonster;
 
     public List<Ability> abilities = new List<Ability>
     {

@@ -36,7 +36,7 @@ public class ListHero : MonoBehaviour
         strength.text = "Str: " + hero.strength;
         dexterity.text = "Dex: " + hero.dexterity;
         intelligence.text = "Int: " + hero.intelligence;
-        heroClass.text = hero.getActiveClass().className;
+        heroClass.text = hero.GetActiveClass().className;
         heroImage.sprite = Resources.Load<Sprite>(hero.portraitSpriteName);
 
         heroList = currentList;

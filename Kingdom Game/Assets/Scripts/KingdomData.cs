@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class KingdomData
 {
     public string name;
+    public float elapsedTime;
     public int gold = 0;
     public int wood = 0;
     public int stone = 0;

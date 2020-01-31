@@ -9,7 +9,6 @@ public class HeroList : MonoBehaviour
     public Transform contentPanel;
     public int numHeroes;
     public List<string> heroNames;
-    public List<string> sprites;
 
     //the list that will store the heroes to go on the mission
     public List<Hero> missionRoster;
@@ -32,9 +31,9 @@ public class HeroList : MonoBehaviour
             // choose a name from the list in the editor at random
             newHero.name = heroNames[Random.Range(0, heroNames.Count - 1)];
 
-            //choose a sprite name to assign to the hero at random from the list in editor
-            //this will be loaded later
-            newHero.portraitSpriteName = sprites[Random.Range(0, sprites.Count - 1)];
+            //set the sprite name to be the heros name with Portrait on the end ie "grothnakPortrait"
+            //ALL SPRITES MUST FOLLOW THIS CONVENTION
+            newHero.portraitSpriteName = newHero.name + "Portrait";
 
             chooseClass(newHero);
             generateStats(newHero);

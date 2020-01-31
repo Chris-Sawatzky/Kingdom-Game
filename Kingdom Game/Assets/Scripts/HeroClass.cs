@@ -14,7 +14,7 @@ public class HeroClass
     public int classLevel;
     public string baseStat;
     public bool active = false;
-    public string ClassIconSpriteName;
+    public string classIconSpriteName;
 
     public List<Ability> abilities = new List<Ability>();
 
@@ -24,12 +24,12 @@ public class HeroClass
     /// <param name="className">name if the class</param>
     /// <param name="classLevel">level of the class</param>
     /// <param name="baseStat">the primary stat of the class that attacks will use to determine damage</param>
-    public HeroClass(string className, int classLevel, string baseStat, string ClassIconSpriteName)
+    public HeroClass(string className, int classLevel, string baseStat, string classIconSpriteName)
     {
         this.className = className;
         this.classLevel = classLevel;
         this.baseStat = baseStat;
-        this.ClassIconSpriteName = ClassIconSpriteName;
+        this.classIconSpriteName = classIconSpriteName;
 
         assignAbilities();
     }

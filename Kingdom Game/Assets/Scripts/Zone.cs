@@ -7,6 +7,7 @@ public class Zone : MonoBehaviour
     public int parentRegionID;
     public int maxLevel;
     public int minLevel;
+    public bool bossZone;
 
     //TODO remember to set all the zone parameters and click handlers when adding a zone to a region
     public void sendToManager()

@@ -7,7 +7,7 @@ public class Region : MonoBehaviour
 
     public int regionID;
     public string regionName;
-    public bool isCompleted; //TODO not actually using this anywhere, cosider removing
+    public bool isCompleted;
     public bool isAvailable;
     Kingdom kingdom;
     private MapManager mM;
@@ -23,13 +23,14 @@ public class Region : MonoBehaviour
 
         setAvailability(kingdom);
         checkCompletion(kingdom);
-        //when the game starts if isAvailable is true, set the button to be active
+        //when the game starts if isAvailable is false, set the button to be inactive
+        //TODO think about putting this in the update function OR make sure to set state of regions when a zone battle is ended
         if (!isAvailable)
         {
             transform.gameObject.SetActive(false);
         }
 
-        //each reggion will add itself to the list in the manager
+        //each region will add itself to the list in the manager
         mM.regions.Add(this);
 
         //after it is added it will call the managers method to sort itself to make sure they are in the correct order

@@ -13,8 +13,8 @@ public class SelectedHero : MonoBehaviour
     public void displaySelectedHero(Hero hero)
     {
         heroName.text = hero.name;
-        heroClass.text = hero.getActiveClass().className;
-        heroClassLevel.text = "Level: " + hero.getActiveClass().classLevel;
+        heroClass.text = hero.GetActiveClass().className;
+        heroClassLevel.text = "Level: " + hero.GetActiveClass().classLevel;
         portrait.sprite = Resources.Load<Sprite>(hero.portraitSpriteName);
     }
 

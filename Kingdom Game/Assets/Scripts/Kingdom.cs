@@ -8,12 +8,16 @@ using UnityEngine.UI;
 
 public class Kingdom : MonoBehaviour
 {
+
+    public float elapsedTime;
     //variables to be used in calculations etc.
     //TODO will need to put the resources into a list
     new public string name;
     public int gold = 0;
     public int wood = 0;
     public int stone = 0;
+
+    public Building blacksmith;
 
     //variables to be displayed on screen
     public Text KingdomName;
@@ -30,23 +34,29 @@ public class Kingdom : MonoBehaviour
     public int highestLevelRegionActive = 0;
 
     public GameObject inputField;
-    public void assignKingdomName()
+    public void AssignKingdomName()
     {
         name = inputField.GetComponent<InputField>().text;
         Debug.Log("Kingdom name is " + name);
     }
 
-    void Update()
+    public void Start()
+    {
+        blacksmith = GameObject.Find("Blacksmith").GetComponent<Building>();
+    }
+
+    public void Update()
     {
         KingdomName.text = name;
         goldAsText.text = "Gold: " + gold;
         woodAsText.text = "Wood: " + wood;
         stoneAsText.text = "Stone: " + stone;
+
+        elapsedTime += Time.deltaTime;
     }
 
     public KingdomData CreateKingdomDataObject()
     {
-        Building blacksmith = GameObject.Find("Blacksmith").GetComponent<Building>();
         //TODO Tailor is not yet saved (am unsure if this building will remain)
 
 
@@ -64,11 +74,13 @@ public class Kingdom : MonoBehaviour
 
         data.highestLevelRegionActive = highestLevelRegionActive;
 
+        data.elapsedTime = elapsedTime;
+
         return data;
     }
 
     //test method to make sure the gold is being saved and displayed properly
-    public void boostGold()
+    public void BoostGold()
     {
         gold += 100;
     }
@@ -95,6 +107,8 @@ public class Kingdom : MonoBehaviour
 
             name = data.name;
             gold = data.gold;
+
+            elapsedTime = data.elapsedTime;
 
 
             //load the inventory lists

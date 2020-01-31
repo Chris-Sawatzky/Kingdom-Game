@@ -31,11 +31,11 @@ public class ClassManager : MonoBehaviour
     private void displayHeroInfo()
     {
         heroName.text = hero.name;
-        heroClassName.text = hero.getActiveClass().ToString();
+        heroClassName.text = hero.GetActiveClass().ToString();
         heroSTR.text = hero.strength.ToString();
         heroINT.text = hero.intelligence.ToString();
         heroDEX.text = hero.dexterity.ToString();
-        heroClassLevel.text = hero.getActiveClass().classLevel.ToString();
+        heroClassLevel.text = hero.GetActiveClass().classLevel.ToString();
     }
 
     /// <summary>
@@ -66,7 +66,7 @@ public class ClassManager : MonoBehaviour
     public void changeClass(HeroClass heroClass)
     {
         //change the currently active class to be inactive
-        hero.getActiveClass().deactivate();
+        hero.GetActiveClass().deactivate();
 
         for (int i = 0; i < hero.classList.Count; i++)
         {
