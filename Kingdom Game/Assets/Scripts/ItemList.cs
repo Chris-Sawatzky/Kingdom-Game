@@ -10,12 +10,6 @@ public class ItemList : MonoBehaviour
     public List<Weapon> weaponList;
     public List<Armor> armorList;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     /// <summary>
     /// populate the list of items in your inventory uses a different method than the rest of the shops to display the sell price 
     /// of an already possesed item (could still change it to have two different setups in the CraftItem class, one for crafting and one for selling)
@@ -44,7 +38,7 @@ public class ItemList : MonoBehaviour
         GameObject newButton = (GameObject)GameObject.Instantiate(prefab);
         newButton.transform.SetParent(contentPanel);
 
-        Inventory sellButton = newButton.GetComponent<Inventory>();
+        ItemButton sellButton = newButton.GetComponent<ItemButton>();
 
         sellButton.Setup(item, this);
     }
@@ -110,7 +104,7 @@ public class ItemList : MonoBehaviour
             GameObject newButton = (GameObject)GameObject.Instantiate(prefab);
             newButton.transform.SetParent(contentPanel);
 
-            CraftItem craftButton = newButton.GetComponent<CraftItem>();
+            ItemButton craftButton = newButton.GetComponent<ItemButton>();
 
             craftButton.Setup(item, this);
         }

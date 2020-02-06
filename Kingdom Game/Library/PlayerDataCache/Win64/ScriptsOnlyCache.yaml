@@ -1,10 +1,24 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - Building
+    - ClassManager
+    - ClassSelectionButton
     - CloseGame
+    - EquipmentButton
+    - EquipmentManager
+    - GenerateHero
+    - HeroList
+    - HeroSelectList
+    - ItemButton
+    - ItemList
     - Kingdom
-    - LoadScene
-    - Save
+    - ListHero
+    - MapManager
+    - Region
+    - SelectedHero
+    - TradingPost
+    - Zone
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
@@ -12,12 +26,18 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.ContentSizeFitter
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
     - UnityEngine.UI.InputField
+    - UnityEngine.UI.LayoutElement
+    - UnityEngine.UI.Mask
+    - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Text
+    - UnityEngine.UI.VerticalLayoutGroup
   sceneClasses:
-    Assets/Scenes/TitleScreen.unity:
+    Assets/Scenes/Game.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -35,29 +55,69 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9280}
+      Script: {instanceID: 9208}
     - Class: 114
-      Script: {instanceID: 9322}
+      Script: {instanceID: 9268}
     - Class: 114
-      Script: {instanceID: 9324}
+      Script: {instanceID: 9284}
     - Class: 114
       Script: {instanceID: 9330}
     - Class: 114
-      Script: {instanceID: 9336}
+      Script: {instanceID: 9332}
+    - Class: 114
+      Script: {instanceID: 9334}
+    - Class: 114
+      Script: {instanceID: 9338}
     - Class: 114
       Script: {instanceID: 9344}
     - Class: 114
-      Script: {instanceID: 9346}
+      Script: {instanceID: 9352}
+    - Class: 114
+      Script: {instanceID: 9354}
+    - Class: 114
+      Script: {instanceID: 9356}
+    - Class: 114
+      Script: {instanceID: 9360}
+    - Class: 114
+      Script: {instanceID: 9378}
     - Class: 114
       Script: {instanceID: 9380}
     - Class: 114
-      Script: {instanceID: 9382}
+      Script: {instanceID: 9388}
     - Class: 114
-      Script: {instanceID: 9534}
+      Script: {instanceID: 9390}
     - Class: 114
-      Script: {instanceID: 9676}
+      Script: {instanceID: 9400}
     - Class: 114
-      Script: {instanceID: 10564}
+      Script: {instanceID: 9422}
+    - Class: 114
+      Script: {instanceID: 9588}
+    - Class: 114
+      Script: {instanceID: 9608}
+    - Class: 114
+      Script: {instanceID: 9790}
+    - Class: 114
+      Script: {instanceID: 9892}
+    - Class: 114
+      Script: {instanceID: 9898}
+    - Class: 114
+      Script: {instanceID: 9992}
+    - Class: 114
+      Script: {instanceID: 10046}
+    - Class: 114
+      Script: {instanceID: 10056}
+    - Class: 114
+      Script: {instanceID: 10134}
+    - Class: 114
+      Script: {instanceID: 10196}
+    - Class: 114
+      Script: {instanceID: 10358}
+    - Class: 114
+      Script: {instanceID: 10446}
+    - Class: 114
+      Script: {instanceID: 10522}
+    - Class: 114
+      Script: {instanceID: 10616}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -73,6 +133,12 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
+  - hash:
+      serializedVersion: 2
+      Hash: 45621ccad7dc8fcf154c31137f19e23e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MapManager
   - hash:
       serializedVersion: 2
       Hash: 984dcc0ba3707b7691fbdca8ff508d28
@@ -105,13 +171,19 @@ ScriptsOnlyBuild:
     className: GroupTrack
   - hash:
       serializedVersion: 2
+      Hash: 9f704504556c9116cf57e594d5556800
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Region
+  - hash:
+      serializedVersion: 2
       Hash: a5781dc71a671b1ad2b38de19f24b71f
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: ActivationTrack
   - hash:
       serializedVersion: 2
-      Hash: 3e62759ea38bb6c42d973a53c615ddd0
+      Hash: 3f1b3f054ac0d11c53257f676d489d21
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Kingdom
@@ -315,6 +387,12 @@ ScriptsOnlyBuild:
     className: TMP_InputField
   - hash:
       serializedVersion: 2
+      Hash: 2065b753239da66d55942883eab516e7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Building
+  - hash:
+      serializedVersion: 2
       Hash: cf9f5cf2c3145a37ac07f00e50e460f9
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -507,22 +585,28 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 7854143c2e311ce52a6069d957503633
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Save
-  - hash:
-      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalAsset
   - hash:
       serializedVersion: 2
+      Hash: fd48d0980bec54946f44473920ace109
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SelectedHero
+  - hash:
+      serializedVersion: 2
       Hash: f08a111e17bb701f9c9ec57bb78d9920
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: AnimationTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 14d6ce6be0e01673895834caf5a06a5f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ClassManager
   - hash:
       serializedVersion: 2
       Hash: 00274a21279f5cb831ce20f895049e38
@@ -573,6 +657,12 @@ ScriptsOnlyBuild:
     className: ControlTrack
   - hash:
       serializedVersion: 2
+      Hash: 6f3b9fe83c09051a51aa024099d1a06a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TradingPost
+  - hash:
+      serializedVersion: 2
       Hash: b3ab2106268377ffe25dd18ac23dca28
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -583,6 +673,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 3504fcc40a19d58d985c26cf4ea7e677
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EquipmentManager
+  - hash:
+      serializedVersion: 2
+      Hash: 885e2f11abda8e2946551586ebe4cc88
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ItemButton
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -597,10 +699,34 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
+      Hash: df3111986bf7b71411dc7216f782895f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: InventoryItemDisplay
+  - hash:
+      serializedVersion: 2
       Hash: 4fd8bf02e3089425d3502e26c44ba31a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextContainer
+  - hash:
+      serializedVersion: 2
+      Hash: 1cc0140a72b126cd37ed7f40e14c2668
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ItemList
+  - hash:
+      serializedVersion: 2
+      Hash: 2aecac1116d9758a7e629304566d16ca
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EquipmentButton
+  - hash:
+      serializedVersion: 2
+      Hash: 51a48f5c8d76a7b91ab9338eec1a1c65
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Zone
   - hash:
       serializedVersion: 2
       Hash: 3f8d7b92a6be3c715e55d5cfa7cc8384
@@ -625,6 +751,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: ActivationPlayableAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 3b55c9ac37410cdc5111078c01ad84c7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ClassSelectionButton
   - hash:
       serializedVersion: 2
       Hash: 88cc9df3c6fc697bfbeacd24c0d6f2d7
@@ -669,6 +801,12 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
+      Hash: 4b72b8855d93341cb975380c676c076e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GenerateHero
+  - hash:
+      serializedVersion: 2
       Hash: ee0cef6caaac8ae485bfa82f000f0f7b
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -687,6 +825,18 @@ ScriptsOnlyBuild:
     className: AudioTrack
   - hash:
       serializedVersion: 2
+      Hash: 5c9247972f5a111d2ee29d8113c4fc6c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ListHero
+  - hash:
+      serializedVersion: 2
+      Hash: 078fce7b20f29d4fa7c53228d0962d92
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: HeroSelectList
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -697,6 +847,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_StyleSheet
+  - hash:
+      serializedVersion: 2
+      Hash: 5d9875aa8465fd468b4929c5e23e5fd9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: HeroList
   - hash:
       serializedVersion: 2
       Hash: 5372ed2ce39229b1ac910757999a8be2
@@ -735,5 +891,5 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   platform: 19
   scenePathNames:
-  - Assets/Scenes/TitleScreen.unity
+  - Assets/Scenes/Game.unity
   playerPath: C:/Unity Projects/Builds/MonoBleedingEdge/Kingdom Game.exe

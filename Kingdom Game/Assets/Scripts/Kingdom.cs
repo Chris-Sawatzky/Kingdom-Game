@@ -25,7 +25,7 @@ public class Kingdom : MonoBehaviour
     public Text woodAsText;
     public Text stoneAsText;
 
-    public List<Weapon> weapons;
+    public List<Weapon> weapons;//TODO consider simplifying by using an itemList class object that contains these two lists
     public List<Armor> armor;
 
     public List<Hero> heroes;
