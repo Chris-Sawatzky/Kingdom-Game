@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+//TODO change name to HeroButton and refactor the HeroSelectList into this class
 public class ListHero : MonoBehaviour
 {
     public Button button;
@@ -11,19 +12,13 @@ public class ListHero : MonoBehaviour
     public Text dexterity;
     public Text intelligence;
     public Text heroClass;
+    public Text classLevel;
 
     public Image heroImage;
 
     private Hero hero;
     private HeroList heroList;
     private EquipmentManager em;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        button.onClick.AddListener(HandleClick);
-    }
 
     // setup the button to display in the hero list
     public void Setup(Hero currentHero, HeroList currentList)
@@ -37,15 +32,21 @@ public class ListHero : MonoBehaviour
         dexterity.text = "Dex: " + hero.dexterity;
         intelligence.text = "Int: " + hero.intelligence;
         heroClass.text = hero.GetActiveClass().className;
+        classLevel.text = hero.GetActiveClass().classLevel.ToString();
         heroImage.sprite = Resources.Load<Sprite>(hero.portraitSpriteName);
 
         heroList = currentList;
     }
 
-    public void HandleClick()
+    public void displayHeroEquipment()
     {
         em = GameObject.Find("Hero Manager").GetComponent<EquipmentManager>();
         em.RemoveButtons();
         em.displayHero(hero);
+    }
+
+    public void addHeroSelection()
+    {
+        heroList.addSelectedHero(hero);
     }
 }

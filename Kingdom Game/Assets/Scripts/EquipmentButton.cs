@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+//TODO refactor into the ItemButton class
 public class EquipmentButton : MonoBehaviour
 {
     public Button button;

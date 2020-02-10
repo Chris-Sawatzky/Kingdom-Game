@@ -44,7 +44,7 @@ public class HeroList : MonoBehaviour
 
         }
     }
-    //TODO pass the button style to use as a variable and refactor these into one method
+    //TODO pass the button style to use as a variable and refactor these into one method, or possibly refactor the buttons into one class
     /// <summary>
     /// list the heros in the equipment screen to be able to change equipment
     /// </summary>
@@ -58,23 +58,6 @@ public class HeroList : MonoBehaviour
             newButton.transform.SetParent(contentPanel);
 
             ListHero heroButton = newButton.GetComponent<ListHero>();
-
-            heroButton.Setup(kingdom.heroes[i], this);
-        }
-    }
-    /// <summary>
-    /// list the heroes in the hero selection screen when going on a mission
-    /// </summary>
-    public void ListHerosToSelect()
-    {
-        Kingdom kingdom = GameObject.Find("Kingdom").GetComponent<Kingdom>();
-
-        for (int i = 0; i < kingdom.heroes.Count; i++)
-        {
-            GameObject newButton = (GameObject)GameObject.Instantiate(prefab);
-            newButton.transform.SetParent(contentPanel);
-
-            HeroSelectList heroButton = newButton.GetComponent<HeroSelectList>();
 
             heroButton.Setup(kingdom.heroes[i], this);
         }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//TODO refactor the equipmentManager and ItemList classes together and after that is done I can combine the EquipmentButton and ItemButton classes
 public class EquipmentManager : MonoBehaviour
 {
     //fields for displaying the Heros stats

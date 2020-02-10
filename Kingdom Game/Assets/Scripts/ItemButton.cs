@@ -58,4 +58,6 @@ public class ItemButton : MonoBehaviour
     {
         itemList.sellItem(item);
     }
+
+    //TODO add another method to handle equiping items to the hero in order to remove the equipment button class
 }
